@@ -1,0 +1,103 @@
+\documentclass[a4paper, twoside, 12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[
+top=2cm,
+bottom=2cm,
+inner=3cm,
+outer=2cm,
+]{geometry}
+
+\begin{document}
+	
+	\begin{figure}[t]
+		\includegraphics[scale=0.8]{AGH}
+		\centering
+	\end{figure}
+	
+	\begin{center}
+		Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej 
+		\vspace{10mm} %5mm vertical space
+	
+		Praca dyplomowa inżynierska \\ 
+		\vspace{10mm}
+		Optymalizacja trasy z wykorzystaniem algorytmu przybliżonego
+	\end{center}
+	
+	\vfill
+	\begin{flushleft}
+		Autor: Rafał Siniewicz \newline
+		Kieunek studiów: Automatyka i automatyka \newline 
+		Opiekun: dr inż. Joanna Kwiecień \newline
+	
+	\end{flushleft}
+	
+	\begin{center}Kraków, 2019/2020r.\end{center}
+	
+	\newpage
+	
+	\begin{flushleft}
+		\begin{large}\textbf{Spis treści}\end{large}
+		\textbf{
+			\\1. Wstęp teoretyczny\\
+			2. Opis projektu\\
+			3. 
+		}
+	\end{flushleft}
+	\newpage
+	
+	%\begin{flushleft}
+		
+	\begin{large}\textbf{1. Wstęp teoretyczny}\end{large}
+	\vspace{10mm} %5mm vertical space
+	
+	\hspace{5mm}
+	Poszukiwanie optymalnej trasy jest uniwersalnym problemem, który można rozwiązywać na wiele róznych sposobów. W tej pracy zajęto się problemem marszrutyzacji (VRP- vehicle routing problem), czyli znajdowania optymalnych zbiorów tras dla grupy pojazdów. Problem ten jest rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
+	- VRP with Time Windows- czyli uwzględnienie okien czasowych odbioru/ wysłania towaru\\
+	- Split Delivery VRP- czyli możliwość obsługi jednego klienta przez kilka pojazdów\\
+	- Vehicle Routing Problem with Multiple Trips (VRPMT)- czyli możliwość pokonania więcej niż jednej trasy przez jeden pojazd\\
+	- Capacitated Vehicle Routing Problem: CVRP- pojazdy mają ograniczoną pojemność\\ 
+	- inne\\
+
+	\vspace{5mm} %5mm vertical space
+
+	\hspace{5mm}Ponadto problem można rozwinąć o wiele innych czynników, jak np. kolejność odwiedzenia miejsc czy opcjonalnego odwiedzenia niektórych punktów lub funkcja kosztu może rozpatrywać różne parametry, np. czas wykonania zleceń czy ilość przewiezionego ładunku. Widać zatem, że problem marszrutyzacji jest zagadnieniem bardzo rozległym, a przy tym elastycznym, tzn. można go dostosować do wielu różnych problemów\hyperlink{vrp}{[1]}. Przy rozwiązywaniu poblemu optymalizacji użyto algorytm genetyczny, ze względu na uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania.
+	
+	\vspace{5mm} %5mm vertical space
+	
+	\hspace{5mm}Algorytm genetyczny- jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków). Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \\
+	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji\hyperlink{ag}{[2]}.
+	
+	\newpage
+	\begin{large}\textbf{2. Opis projektu}\end{large}\\
+	\vspace{10mm} %5mm vertical space
+	
+	\hspace{5mm}Projekt stanowi aplikacja desktopowa, która na podstawie pobranych danych (lub wpisanych przez użytkownika) oblicza optymalną trasę oraz wyświetla ją na mapie. Pobierane dane są zawarte w pliku tekstowym .json o określonym formacie. Każdy punkt jest opisany 3 polami: nazwa, długość geograficzna, szerokość geograficzna. Odległość między puntami jest obliczana jako najkrótsza ścieżka między nimi na powierzchni kuli ziemskiej. W GUI użytkownik wprowadza ilość pojazdów oraz wybiera punkty, które mają zostać odwiedzone.
+	
+	
+	
+	\newpage
+	\renewcommand\refname{Źródła}
+	\begin{thebibliography}{}
+		\bibitem{vrp} 
+		{\hypertarget{vrp}{\textcolor{blue}{https://en.wikipedia.org/wiki/Vehicle\_routing\_problem}}}
+		
+		\bibitem{ag} 
+		{\hypertarget{ag}{\textcolor{blue}{https://pl.wikipedia.org/wiki/Algorytm\_genetyczny}}}
+		
+	\end{thebibliography}
+	
+	
+	%\end{flushleft}
+	
+\end{document}
