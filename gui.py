@@ -6,7 +6,6 @@ from PyQt5.QtCore import pyqtSlot, QUrl
 from PyQt5 import QtCore
 from functools import partial
 from program import *
-from map import *
 import folium
 import geocoder
 import webbrowser

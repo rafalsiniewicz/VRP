@@ -59,9 +59,14 @@ class Program:
 		self.size = number_of_individuals_to_stay
 
 
-	def PlayRound(self, number_of_cycles = 50, number_of_crossings = 40, number_of_individuals_to_stay = 100):
+	def PlayRound(self, sort_type = "distance_capacity", number_of_cycles = 50, number_of_crossings = 40, number_of_individuals_to_stay = 100):
 		self.population.AddStart(START,END)
-		self.population.SortPopulation()
+		if sort_type == "distance_capacity":
+			self.population.SortPopulation()
+		if sort_type == "distance":
+			self.population.SortbyDistance()
+		if sort_type == "capacity":
+			self.population.SortbyCapacity()
 		for j in range(0,number_of_cycles):
 			self.population.RemoveStart()
 			for i in range(0,number_of_crossings):
@@ -69,7 +74,12 @@ class Program:
 				pass
 			#self.population.Mutation()
 			self.population.AddStart(START,END)
-			self.population.SortPopulation()
+			if sort_type == "distance_capacity":
+				self.population.SortPopulation()
+			if sort_type == "distance":
+				self.population.SortbyDistance()
+			if sort_type == "capacity":
+				self.population.SortbyCapacity()
 			self.population.LeavenBest(number_of_individuals_to_stay)
 
 		self.population.SortPopulation()

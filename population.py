@@ -29,6 +29,7 @@ class Population:
 
 	def AddStart(self,start,end):
 		for i in self.population:
+			i.ResetLength()
 			for j in i.Get():
 				j.Get().update(start)
 				j.Get().move_to_end("START", last=False)
@@ -187,9 +188,28 @@ class Population:
 		self.population[parent] = mutated
 
 	def SortPopulation(self):
-		def GetIndividualLength(individual):
+		#the less capacity and distance is the better //capacity should be low, because it means vehicle took much load
+		#sorted in ascending order- the best individual has the lowest goal function value // Measure is the goal function 
+		def Measure(individual):
+			if individual.GetCapacity() > 0:
+				size = str( int (int(individual.GetLength().km) / individual.GetCapacity()) )
+				#print("size ", size)
+				#print("len", len(size))
+				#print("size", pow(10, len(size) - 1))
+				return int(individual.GetLength().km) + pow(10, len(size) - 1)*individual.GetCapacity()
+			else:
+				return int(individual.GetLength().km) + individual.GetCapacity()
+		self.population.sort(key=Measure)
+
+	def SortbyDistance(self):
+		def Measure(individual):
 			return individual.GetLength()
-		self.population.sort(key=GetIndividualLength)
+		self.population.sort(key=Measure)
+
+	def SortbyCapacity(self):
+		def Measure(individual):
+			return individual.GetCapacity()
+		self.population.sort(key=Measure)
 		
 
 	def BestIndividual(self):

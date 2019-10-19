@@ -11,7 +11,7 @@ class Individual:
 	def AddRoute(self,route):
 		#self.individual.update(route.Get())
 		self.individual.append(route)
-		#self.length+=route.GetLength()
+		self.length+=route.GetLength()
 		#self.AddPlaceength(route)
 	def Get(self):
 		return self.individual
@@ -21,6 +21,11 @@ class Individual:
 		return self.length
 	def GetSize(self):
 		return len(self.individual)
+	def GetCapacity(self):
+		capacity = 0
+		for i in self.individual:
+			capacity += i.GetCapacity()
+		return capacity
 	def Show(self):
 		for i in range(0,len(self.individual)):
 			print(self.individual[i].Get(),end="")
@@ -63,8 +68,8 @@ class Individual:
 			route = Route()
 			for j in range(0,routes_length[i]):
 				random=sample(numbers,k=1)
-				route.AddPlace(data.GetName(random[0]),data.GetValue(random[0]))
-				numbers.remove(random[0])
+				if route.AddPlace(data.GetName(random[0]),data.GetValue(random[0])) == True:
+					numbers.remove(random[0])
 			self.AddRoute(route)
 		'''for i in range(0,n):
 			route = Route()

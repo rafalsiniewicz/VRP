@@ -41,17 +41,26 @@ END = {"END":[50.057767, 19.931321]}
 #G = graph_from_place('Krakow, Poland', network_type='drive')
 	
 class Route:
-	def __init__(self):
+	def __init__(self, _capacity = 10):
 		self.route=OrderedDict()
+		self.capacity = _capacity
 	def AddPlace(self,name,values):
-		if name != None:
+		if name != None and self.capacity - values[2] >= 0:
 			self.route[name]=values
+			self.capacity -= values[2]
+			return True
+		else:
+			return False
 	def Get(self):
 		return self.route
 	def GetSize(self):
 		return len(self.route)
 	def Show(self):
 		print(self.route)
+	def ShowCapacity(self):
+		print(self.capacity)
+	def GetCapacity(self):
+		return self.capacity
 	def GetLength(self):
 		length = Geodesic_distance([0, 0],[0, 0])
 		#length = Street_distance(G, [0, 0],[0, 0])
