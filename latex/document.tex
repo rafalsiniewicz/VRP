@@ -1,4 +1,4 @@
-\documentclass[a4paper, twoside, 12pt]{article}
+\documentclass[a4paper, twoside, 12pt, justified]{article}
 \usepackage{lingmacros}
 \usepackage{tree-dvips}
 \usepackage{graphicx}
@@ -17,6 +17,7 @@ bottom=2cm,
 inner=3cm,
 outer=2cm,
 ]{geometry}
+\usepackage{microtype}
 
 \begin{document}
 	
@@ -62,27 +63,69 @@ outer=2cm,
 	\vspace{10mm} %5mm vertical space
 	
 	\hspace{5mm}
-	Poszukiwanie optymalnej trasy jest uniwersalnym problemem, który można rozwiązywać na wiele róznych sposobów. W tej pracy zajęto się problemem marszrutyzacji (VRP- vehicle routing problem), czyli znajdowania optymalnych zbiorów tras dla grupy pojazdów. Problem ten jest rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
+	Poszukiwanie optymalnej trasy jest uniwersalnym problemem, który można rozwiązywać na wiele róznych sposobów. W tej pracy zajęto się problemem marszrutyzacji (VRP- vehicle routing problem), czyli znajdowania optymalnych zbiorów tras dla grupy pojazdów. Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
+	VRP (Vehicle Routing Problem)- problem kombinatoryczny bazujący na zbiorach krawędzi i wierzchołków grafu G(V,E). Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Notacja: \\
+	- V jest zbiorem punktów do odwiedzenia i punktu początkowego,\\
+	- E jest zbiorem krawędzi łaczących punkty V,\\
+	- d jest wektorem pojemności towarów w punktach,\\
+	- k jest liczbą tras,\\
+	- C to pojemność pojazdu,\\
+	
+	Ogólnie dla problemu CVRP rozwiązanie składa się z:\\
+	- zbioru \{$R_{1}$,...,$R_{k}$\} z V takiego, że:  $\sum_{j \in R_i} d_j \leq C, \quad 1 \leq i \leq k$ \\
+	- permutacji $\theta_i$ z $R_i \cup \{0\}$ określającej kolejność odwiedzonych punktów w trasie $i$\\
+	
+	Istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
 	- VRP with Time Windows- czyli uwzględnienie okien czasowych odbioru/ wysłania towaru\\
 	- Split Delivery VRP- czyli możliwość obsługi jednego klienta przez kilka pojazdów\\
 	- Vehicle Routing Problem with Multiple Trips (VRPMT)- czyli możliwość pokonania więcej niż jednej trasy przez jeden pojazd\\
 	- Capacitated Vehicle Routing Problem: CVRP- pojazdy mają ograniczoną pojemność\\ 
-	- inne\\
+	- inne
 
 	\vspace{5mm} %5mm vertical space
 
-	\hspace{5mm}Ponadto problem można rozwinąć o wiele innych czynników, jak np. kolejność odwiedzenia miejsc czy opcjonalnego odwiedzenia niektórych punktów lub funkcja kosztu może rozpatrywać różne parametry, np. czas wykonania zleceń czy ilość przewiezionego ładunku. Widać zatem, że problem marszrutyzacji jest zagadnieniem bardzo rozległym, a przy tym elastycznym, tzn. można go dostosować do wielu różnych problemów\hyperlink{vrp}{[1]}. Przy rozwiązywaniu poblemu optymalizacji użyto algorytm genetyczny, ze względu na uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania.
+	\hspace{5mm}Powyższy problem można również rozwinąć o wiele innych czynników, jak np. kolejność odwiedzenia miejsc czy opcjonalnego odwiedzenia niektórych punktów lub funkcja kosztu może rozpatrywać różne parametry, np. czas wykonania zleceń czy ilość przewiezionego ładunku. Widać zatem, że problem marszrutyzacji jest zagadnieniem bardzo rozległym, a przy tym elastycznym, tzn. można go dostosować do wielu różnych problemów.
 	
-	\vspace{5mm} %5mm vertical space
+	\vspace{5mm}
 	
-	\hspace{5mm}Algorytm genetyczny- jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków). Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \\
-	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji\hyperlink{ag}{[2]}.
+	\hspace{5mm}Przy rozwiązywaniu poblemu optymalizacji użyto algorytm genetyczny, ze względu na uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. Na podstawie \hyperlink{ag}{[3]}:\\
+	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \newpage
+	
+	Algorytm genetyczny w krokach:\\
+	1. Utworzenie początkowej populacji\\
+	2. Przeprowadzanie mutacji i krzyżowania\\
+	3. Sprawdzenie funkcji celu dla osobników\\
+	4. Wybór najlepszych osobników poprzez selekcję\\
+	5. Powtarzanie kroków 2-4 aż do spełnienia warunku stopu\\
+	6. Koniec algorytmu i wybór najlepszego osobnika
+	
+	\vspace{10mm}
+	
+	
+	\begin{figure}[h]
+	\includegraphics[scale=0.8]{image}
+	\centering
+	\\
+	{Rysunek1. Schemat algorytmu genetycznego} 
+	\end{figure}
+	
+	
 	
 	\newpage
 	\begin{large}\textbf{2. Opis projektu}\end{large}\\
+	\vspace{5mm} %5mm vertical space
+	
+	\begin{large}\textbf{2.1. Cel i zakres pracy}\end{large}\\
 	\vspace{10mm} %5mm vertical space
 	
-	\hspace{5mm}Projekt stanowi aplikacja desktopowa, która na podstawie pobranych danych (lub wpisanych przez użytkownika) oblicza optymalną trasę oraz wyświetla ją na mapie. Pobierane dane są zawarte w pliku tekstowym .json o określonym formacie. Każdy punkt jest opisany 3 polami: nazwa, długość geograficzna, szerokość geograficzna. Odległość między puntami jest obliczana jako najkrótsza ścieżka między nimi na powierzchni kuli ziemskiej. W GUI użytkownik wprowadza ilość pojazdów oraz wybiera punkty, które mają zostać odwiedzone.
+	\hspace{5mm}Praca ma na celu stworzenie
+	 aplikacji komputerowej, która na podstawie pobranych danych (lub wpisanych przez użytkownika) oblicza optymalną trasę według przyjętych kryteriów dla rozważanego problemu oraz wyświetla ją na mapie. Optymalizacja trasy jest przeprowadzona dla problemu CVRP, czyli Capacity Vehicle Routing Problem przy użyciu algorytmu genetycznego. 
+	 \vspace{10mm}
+	 
+	 \begin{large}\textbf{2.2. Opis aplikacji i użyte technologie}\end{large}\\
+	 \vspace{10mm} %5mm vertical space
+	 
+	 Aplikacja została napisana w pythonie. Do jest stworzenia wykorzystano m.in. biblioteki: pyqt5, folium, pyside2, matplotlib oraz webbrowser. Aplikacja korzysta z danych wejściowych, które wczytuje po rozpoczęciu programu. Pobierane dane są zawarte w pliku tekstowym z rozszerzeniem .json. Każdy punkt jest opisany 4 polami: nazwa, długość geograficzna, szerokość geograficzna i pojemność ładunku do zabrania. Odległość między puntami jest obliczana jako najkrótsza ścieżka między nimi na powierzchni kuli ziemskiej. W GUI użytkownik wprowadza ilość pojazdów, ich pojemność oraz wybiera punkty, które mają zostać odwiedzone.
 	
 	
 	
@@ -90,10 +133,15 @@ outer=2cm,
 	\renewcommand\refname{Źródła}
 	\begin{thebibliography}{}
 		\bibitem{vrp} 
-		{\hypertarget{vrp}{\textcolor{blue}{https://en.wikipedia.org/wiki/Vehicle\_routing\_problem}}}
+		{\hypertarget{vrp}{\textcolor{blue}{
+		 Dantzig, George Bernard; Ramser, John Hubert (October 1959). "The Truck Dispatching Problem", https://andresjaquep.files.wordpress.com/2008/10/2627477-clasico-dantzig.pdf}}}
+		
+		\bibitem{cvrp} 
+		{\hypertarget{cvrp}{\textcolor{blue}{T. Ralphs, J. Hartman and M. Galati. "Capacitated Vehicle Routing and Some Related Problems". Some CVRP Slides. Rutgers University. 2001}}}
 		
 		\bibitem{ag} 
-		{\hypertarget{ag}{\textcolor{blue}{https://pl.wikipedia.org/wiki/Algorytm\_genetyczny}}}
+		{\hypertarget{ag}{\textcolor{blue}{
+		D. E. Goldberg: Algorytmy genetyczne i ich zastosowania. Warszawa: WNT, 1998. (pol.)}}}
 		
 	\end{thebibliography}
 	
