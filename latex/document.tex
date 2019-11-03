@@ -50,10 +50,13 @@ outer=2cm,
 	\begin{flushleft}
 		\begin{large}\textbf{Spis treści}\end{large}
 		\textbf{
-			\\1. Wstęp teoretyczny}\\
+			\\1. Wstęp }\\
+			\hspace{5mm}1.1. Cel pracy\\
+			\hspace{5mm}1.2. Zakres pracy\\
+			\hspace{5mm}1.3. Wstęp teoretyczny\\
 			\textbf{2. Opis projektu}\\
-			\hspace{5mm}2.1. Cel i zakres pracy\\
-			\hspace{5mm}2.2. Opis aplikacji i użyte technologie\\
+			\hspace{5mm}2.1. Użyte technologie\\
+			\hspace{5mm}2.2. Opis aplikacji\\
 			\textbf{3. Dokumentacja i działanie aplikacji}\\
 			\textbf{4. Testy}\\
 			\hspace{5mm}4.1. Sprawdzenie poprawnosci wczytywanych danych\\
@@ -65,10 +68,48 @@ outer=2cm,
 	
 	%\begin{flushleft}
 		
-	\begin{large}\textbf{1. Wstęp teoretyczny}\end{large}
-	\vspace{10mm} %5mm vertical space
+	\begin{flushleft}
+		\begin{large}
+			\textbf{1. Wstęp }
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
 	
-	Poszukiwanie optymalnej trasy jest uniwersalnym problemem, który można rozwiązywać na wiele róznych sposobów. W tej pracy zajęto się problemem marszrutyzacji (VRP- vehicle routing problem), czyli znajdowania optymalnych zbiorów tras dla grupy pojazdów. Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
+	Transport od zawsze pełnił bardzo ważną rolę w życiu społeczenśtw. W przeciągu wieków zmieniały się środki transpotu, jego metody, a także szybkość przemieszaczania ludzi oraz towarów. Za każdym jednak razem wyzwanie stanowiło jak najoptymalniejsze przeprowadzenie procesu transportu.
+	Szczególnie w dzisiejszych czasach zaplanowanie tras w taki sposób, aby zminimalizować czas ich pokonania- co wiąże się z mniejszymi kosztami oraz emisjami spalin- jest bardzo cenne.
+	Problem optymalizacji trasy jest bardzo powszechny i wielokrotnie studiowany, zwłaszcza w badaniach operacyjnych, teorii grafów czy logistyce i dziedzinach pokrewnych. W teorii najczęściej dąży się do uzyskania jak najkrótszej trasy, choć problem można rozwinąć o wiele różnych czynników, które wpływają na przebieg trasy, np. jakość nawierzchni czy określona pojemność pojazdów.
+	\vspace{5mm} %5mm vertical space
+	
+	\begin{flushleft}
+		\begin{large}
+			\textbf{1.1. Cel pracy}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
+	
+	Praca ma na celu stworzenie aplikacji komputerowej wraz z interfejsem graficznym służącej do obliczania optymalnej trasy na podstawie odpowiednich danych. Optymalna trasa zostanie obliczona przy pomocy odpowiednich algorytmów. Program będzie również wyświetlał przebiegi tras w formie graficznej wraz z zazaczeniem poszczególnych punktów na mapie. Całość ma stanowić ujednolicony i łatwy w użyciu system, w którym można ustalać parametry, takie jak, np. ilość pojazdów i ich pojemności, współrzędne punktów, a także uzyskać informacje o długości trasy, jej przebiegu i innych statystykach dotyczących rozwiązywanego problemu.  
+	\vspace{5mm} %5mm vertical space
+	
+	\begin{flushleft}
+		\begin{large}
+			\textbf{1.2. Zakres pracy}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
+	
+	W pracy zagadnienie optymalizacji trasy rozważono dla problemu marszrutyzacji, czyli VRP (Vehicle Routing Problem) oraz CVRP (Capacity Vehicle Routing Problem). Projekt skupia się głównie na dwóch czynnikach decydujących o optymalności: długości trasy oraz zapełnieniu pojazdów ładunkiem. \\
+	Przy rozwiązywaniu problemu marszrutyzacji korzystano z algorytmów przybliżonych, a konkretniej algorytmu genetycznego, ze względu na uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. \\
+	
+	
+	\newpage
+	\begin{flushleft}
+		\begin{large}
+			\textbf{1.3. Wstęp teoretyczny}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
+
+	Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
 	VRP (Vehicle Routing Problem)- problem kombinatoryczny bazujący na zbiorach krawędzi i wierzchołków grafu G(V,E). Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Notacja: \\
 	- V jest zbiorem punktów do odwiedzenia i punktu początkowego,\\
 	- E jest zbiorem krawędzi łaczących punkty V,\\
@@ -93,7 +134,7 @@ outer=2cm,
 	
 	\vspace{5mm}
 	
-	Przy rozwiązywaniu poblemu optymalizacji użyto algorytm genetyczny, ze względu na uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. Na podstawie \hyperlink{ag}{[3]}:\\
+	Na podstawie \hyperlink{ag}{[3]}:\\
 	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \newpage
 	
 	Algorytm genetyczny w krokach:\\
@@ -117,20 +158,41 @@ outer=2cm,
 	
 	
 	\newpage
-	\begin{large}\textbf{2. Opis projektu}\end{large}\\
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2. Opis projektu}
+		\end{large}
+	\end{flushleft}
+	
 	\vspace{5mm} %5mm vertical space
 	
-	\begin{large}\textbf{2.1. Cel i zakres pracy}\end{large}\\
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2.1. Użyte technologie}
+		\end{large}
+	\end{flushleft}
 	\vspace{10mm} %5mm vertical space
 	
-	 Praca ma na celu stworzenie
-	 aplikacji komputerowej, która na podstawie pobranych danych (lub wpisanych przez użytkownika) oblicza optymalną trasę według przyjętych kryteriów dla rozważanego problemu oraz wyświetla ją na mapie. Optymalizacja trasy jest przeprowadzona dla problemu CVRP, czyli Capacity Vehicle Routing Problem przy użyciu algorytmu genetycznego. 
-	 \vspace{10mm}
+	 Na podstawie \hyperlink{python}{[4]}:\\
+	 \textbf{Python}- jest językiem programowania ogólnego przeznaczenia. Jest to język wysokiego poziomu. Może być skutecznie wykorzystywany przy budowie w zasadzie każdego programu. Nie potrzebuje bezpośredniego dostępu do sprzętu komputerowego. Python nie jest optymalny dla programów, które mają duże ograniczenia niezawodności lub są zbudowane i utrzymywane przez wiele osób lub przez długi czas. Ma on jednak kilka zalet w porównaniu z innymi językami programowania, m.in.:\\
+	 - jest łatwy w nauce\\ 
+	 - posiada bardzo dużą liczbę darmowych i powszechnie dostępnych bibliotek, zapewniających rozszerzoną funkcjonalność\\ \\
 	 
-	 \begin{large}\textbf{2.2. Opis aplikacji i użyte technologie}\end{large}\\
-	 \vspace{10mm} %5mm vertical space
+	 Na podstawie \hyperlink{osm}{[5]}:\\
+	 \textbf{OSM (OpenStreetMap)}- jest to darmowa, edytowalna mapa całego świata, tworzona przez wolontariuszy, wydawana na licencji open-content. Licencja OpenStreetMap pozwala na bezpłatny dostęp do obrazów i podstawowych danych map. Projekt ma na celu promowanie nowych zastosowań tych danych. Przykład obrazu uzyskanego dzięki OSM \hyperlink{osm_example}{[6]}: \\
 	 
-	 Aplikacja została napisana w pythonie. Do jest stworzenia wykorzystano m.in. biblioteki: pyqt5, folium, pyside2, matplotlib oraz webbrowser. Aplikacja korzysta z danych wejściowych, które wczytuje po rozpoczęciu programu. Pobierane dane są zawarte w pliku tekstowym z rozszerzeniem .json. Każdy punkt jest opisany 4 polami: nazwa, długość geograficzna, szerokość geograficzna i pojemność ładunku do zabrania. Odległość między puntami jest obliczana jako najkrótsza ścieżka między nimi na powierzchni kuli ziemskiej. W GUI użytkownik wprowadza ilość pojazdów, ich pojemność oraz wybiera punkty, które mają zostać odwiedzone.
+ 	\begin{figure}[h]
+ 	\includegraphics[scale=0.23]{osm_example}
+ 	\centering
+ 	\\
+ 	{Rysunek2. Przykładowy screen z osm}
+	\end{figure}
+	 
+	 Biblioteki: \\
+	 
+	 
+	 
+	 
 	
 	
 	
@@ -147,7 +209,19 @@ outer=2cm,
 		\bibitem{ag} 
 		{\hypertarget{ag}{\textcolor{blue}{
 		D. E. Goldberg: Algorytmy genetyczne i ich zastosowania. Warszawa: WNT, 1998. (pol.)}}}
-		
+	
+		\bibitem{python} 
+		{\hypertarget{python}{\textcolor{blue}{
+		 Guttag, John V. (12.08.2016). Introduction to Computation and Programming Using Python: With Application to Understanding Data. MIT Press. ISBN 978-0-262-52962-4.}}}
+	 
+	 	\bibitem{osm} 
+	 	{\hypertarget{osm}{\textcolor{blue}{
+		https://wiki.openstreetmap.org/wiki/About\_OpenStreetMap}}}
+		\bibitem{osm} 
+		{\hypertarget{osm_example}{\textcolor{blue}{
+		https://wiki.openstreetmap.org/wiki/File:Screenshot\_2019-10-23\_CicloMapa.png
+		}}}
+
 	\end{thebibliography}
 	
 	
