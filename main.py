@@ -1,27 +1,29 @@
-#from gui import *
-from program import *
+from gui import *
+#from program import *
 
 if __name__ == '__main__':
     import sys
 
-    #app = QApplication(sys.argv)
-    #window = App()
+    app = QApplication(sys.argv)
+    window = App()
+    sys.exit(app.exec_())
+
     #program = Program()
     #window.interface()
-    program = Program()
+    '''program = Program()
     program.ImportData()
 
-    program.InitializePopulation(1,100)
+    program.InitializePopulation(1,100)'''
 
     #program.ShowPopulation()
     #print(program.GetPopulation().Getn(0).GetLength())
     #program.GetPopulation().AddStart(START,END)
-    for i in range(0,1):
+    '''for i in range(0,1):
         program.PlayRound("capacity")
     #print("aaaa")
     program.ShowLengths()
     program.ShowBest()
-    print(program.GetPopulation().BestIndividual().GetLength())
+    print(program.GetPopulation().BestIndividual().GetLength())'''
     #sys.exit(app.exec_())
 
 '''program = Program()

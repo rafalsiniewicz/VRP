@@ -45,7 +45,7 @@ class Route:
 		self.route=OrderedDict()
 		self.capacity = _capacity
 	def AddPlace(self,name,values):
-		if name != None and self.capacity - values[2] >= 0:
+		if name != None and self.capacity - values[2] >= 0: 
 			self.route[name]=values
 			self.capacity -= values[2]
 			return True

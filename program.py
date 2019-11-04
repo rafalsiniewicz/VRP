@@ -24,6 +24,12 @@ class Program:
 		self.data.Show()
 		print()
 
+	def GetTotalDataCapacity(self):
+		sum = 0
+		for place, position in self.data.Get().items():
+			sum += position[2]
+		return sum
+
 	def GetNames(self):
 		names = []
 		for place, position in self.data.Get().items():
@@ -43,12 +49,12 @@ class Program:
 				del self.data.Get()[place]
 
 
-	def InitializePopulation(self, number_of_vehicles = 3, number_of_individuals_to_stay = 100):
+	def InitializePopulation(self, number_of_vehicles = 3, number_of_individuals_to_stay = 100, vehicle_capacity = 10):
 		#self.ShowData()
 		self.population.Get().clear()
 		for i in range(0,self.size):
 			ind=Individual()
-			ind.CreateIndividual(self.data,number_of_vehicles)
+			ind.CreateIndividual(self.data, number_of_vehicles, vehicle_capacity)
 			self.population.AddIndividual(ind)
 			#ind.Show()
 			#self.ShowPopulation()
@@ -56,10 +62,10 @@ class Program:
 		#self.ShowPopulation()
 		self.population.LeavenBest(number_of_individuals_to_stay)
 
-		self.size = number_of_individuals_to_stay
+		self.size = self.population.GetSize()
 
 
-	def PlayRound(self, sort_type = "distance_capacity", number_of_cycles = 50, number_of_crossings = 40, number_of_individuals_to_stay = 100):
+	def PlayRound(self, sort_type, capacity, number_of_cycles = 50, number_of_crossings = 50, number_of_individuals_to_stay = 100):
 		self.population.AddStart(START,END)
 		if sort_type == "distance_capacity":
 			self.population.SortPopulation()
@@ -70,9 +76,10 @@ class Program:
 		for j in range(0,number_of_cycles):
 			self.population.RemoveStart()
 			for i in range(0,number_of_crossings):
-				self.population.AddIndividual(self.population.CrossingMerged())
-				pass
-			#self.population.Mutation()
+				child = self.population.CrossingMerged(capacity)
+				self.population.AddIndividual(child)
+				
+			self.population.Mutation(capacity)
 			self.population.AddStart(START,END)
 			if sort_type == "distance_capacity":
 				self.population.SortPopulation()

@@ -37,10 +37,13 @@ class Individual:
 		self.length = Geodesic_distance([0, 0],[0, 0])
 
 
-	def CreateIndividual(self,data,n):
+	def CreateIndividual(self, data, n, vehicle_capacity):
 		#Routes =[]
 		#self.individual=[]
 		#self.length=0
+		'''
+		function creates individual and returns true if number of places for individual is equal len(data.Get()) otherwise returns false
+		'''
 		numbers=[]
 		for i in range(0,len(data.Get())):
 			numbers.append(i)
@@ -56,20 +59,29 @@ class Individual:
 		if n == 1:
 			routes_length.append(len(data.Get()))
 		else:
-			routes_length.append(randint(1,len(data.Get())//2))
+			rand = randint(1,len(data.Get())//n)
+			routes_length.append(rand)
 			for i in range(0,n-2):
-				route_length = randint(1,len(data.Get()) - sum(routes_length) - 1)
+				try: 
+					route_length = randint(1,(len(data.Get()) - sum(routes_length) - 1)//(n-1-i))
+				except:
+					print("error during getting random route length- route gets length of 1")
+					route_length = 1
 				routes_length.append(route_length)
 
 			routes_length.append(len(data.Get())-sum(routes_length))
 
-		
+		#print(numbers)
+		routes_length.sort(reverse=True)
+		#print(routes_length)
 		for i in range(0,n):
-			route = Route()
+			route = Route(vehicle_capacity)
 			for j in range(0,routes_length[i]):
-				random=sample(numbers,k=1)
-				if route.AddPlace(data.GetName(random[0]),data.GetValue(random[0])) == True:
-					numbers.remove(random[0])
+				random = choice(numbers)
+				route.AddPlace(data.GetName(random),data.GetValue(random))
+				numbers.remove(random)
+				
+				
 			self.AddRoute(route)
 		'''for i in range(0,n):
 			route = Route()
@@ -92,6 +104,7 @@ class Individual:
 			route.Show()
 			self.AddRoute(route)
 		'''
+		#print(len(self.Merge()))
 
 		#print(route.Get())
 		#return Routes

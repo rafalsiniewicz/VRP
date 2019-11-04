@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QApplication, QWidget, QCheckBox, QButtonGroup, QVBoxLayout, QPushButton, QScrollArea, QGroupBox
+from PyQt5.QtWidgets import QApplication, QFrame, QWidget, QCheckBox, QRadioButton, QButtonGroup, QVBoxLayout, QPushButton, QScrollArea, QGroupBox, QLineEdit, QLabel
 from PyQt5.QtCore import pyqtSlot, QUrl
 from PyQt5 import QtCore
 from functools import partial
@@ -13,7 +13,7 @@ import webview
 import os 
 from PySide2 import *
 import sys
-from PySide2.QtWidgets import QApplication, QLabel
+from PySide2.QtWidgets import QApplication
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 import numpy as np
 import pandas as pd
@@ -69,16 +69,59 @@ class App(QWidget):
             self.layout_SArea.addWidget(self.createLayout_group(i))
         self.layout_SArea.addStretch(1)
 
+    def button(self, name, x_pos, y_pos):
+        button = QPushButton(name, self)
+        #button.setToolTip('This is an example button')
+        button.move(x_pos, y_pos)
+        button.clicked.connect(self.on_click)
+
+    def radio_buttons(self):
+        
+        self.frame = QFrame(self)
+        self.frame.move(250, 90)
+        self.frame.resize(125,55)
+        
+        self.distance = QRadioButton("Distance", self.frame)
+        self.distance.setChecked(True)
+        self.distance.move(0, 0)
+        
+        self.capacity = QRadioButton("Capacity", self.frame)
+        self.capacity.move(0, 20)
+
+        self.distance_capacity = QRadioButton("Distance and Capacity", self.frame)
+        self.distance_capacity.move(0, 40)
+        
+
+    def text_boxes(self):
+        #number of vehicles#
+        self.l1 = QLabel(self)
+        self.l1.setText("number of vehicles")
+        self.l1.move(250, 5)
+        self.number_of_vehicles = QLineEdit(self)
+        self.number_of_vehicles.setPlaceholderText("Please enter number of vehicles")
+        self.number_of_vehicles.move(250, 30)
+
+        #vehicles capacity#
+        self.l2 = QLabel(self)
+        self.l2.setText("vehicles capacity")
+        self.l2.move(400, 5)
+        self.vehicles_capacity = QLineEdit(self)
+        self.vehicles_capacity.setPlaceholderText("Please enter capacity")
+        self.vehicles_capacity.move(400, 30)
+
+
     def initUI(self):
         self.resize(640, 480)
-        button = QPushButton('Calculate track', self)
-        #button.setToolTip('This is an example button')
-        button.move(300,70)
-        button.clicked.connect(self.on_click)
+        self.button('Calculate track', 370, 400)
         self.createLayout_Container()
         self.layout_All = QVBoxLayout(self)
         self.layout_All.addWidget(self.scrollarea)
+        self.text_boxes()
+        self.radio_buttons()
+        #self.num = self.text_box("Please enter number of vehicles", 350, 310)
         self.show()
+
+
 
     '''def interface(self):
 
@@ -107,22 +150,45 @@ class App(QWidget):
     def on_click(self):
         #print('clicked')
         #print(self.names)
+        #print(self.number_of_vehicles.text())
         self.program.SelectData(self.names)
+        number_of_vehicles = int(self.number_of_vehicles.text())
+        
         #self.program.ShowData()
-        self.program.InitializePopulation(2,100)
-        #self.program.ShowPopulation()
+        if self.distance.isChecked():
+            vehicle_capacity = self.program.GetTotalDataCapacity() + 1
+        else:
+            vehicle_capacity = int(self.vehicles_capacity.text())
+        self.program.InitializePopulation(number_of_vehicles, 100, vehicle_capacity)
         self.program.GetPopulation().AddStart(START,END)
-        self.program.GetPopulation().SortPopulation()
+        if self.distance.isChecked():
+            self.program.GetPopulation().SortbyDistance()
+        elif self.capacity.isChecked():
+            self.program.GetPopulation().SortbyCapacity()
+        elif self.distance_capacity.isChecked():
+            self.program.GetPopulation().SortPopulation()
+
         self.program.ShowLengths()
         self.program.GetPopulation().RemoveStart()
         
         for i in range(0,1):
-            self.program.PlayRound()
+            if self.distance.isChecked():
+                #print("distance")
+                self.program.PlayRound("distance", vehicle_capacity)
+            elif self.capacity.isChecked():
+                #print("capacity")
+                self.program.PlayRound("capacity", vehicle_capacity)
+            elif self.distance_capacity.isChecked():
+                #print("distance_capacity")
+                self.program.PlayRound("distance_capacity", vehicle_capacity)    
 
         self.program.ShowLengths()
         self.program.ShowBest()
         print(self.program.GetPopulation().BestIndividual().GetLength())
         self.create_map(self.program)
+   
+        #self.program.ShowPopulation()
+        
 
     def checkBoxChangedAction(self, state):
         if (QtCore.Qt.Checked == state):
@@ -171,7 +237,7 @@ class App(QWidget):
         for i in range(0,self.program.GetPopulation().BestIndividual().GetSize()):
             points = []
             for place, position in self.program.GetPopulation().BestIndividual().Getn(i).Get().items():
-                points.append(position)
+                points.append(position[0:2])
             folium.PolyLine(
                 points,
                 color=choose_color()
