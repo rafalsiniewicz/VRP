@@ -18,6 +18,7 @@ inner=3cm,
 outer=2cm,
 ]{geometry}
 \usepackage{microtype}
+\usepackage{amsmath}
 
 \begin{document}
 	
@@ -49,11 +50,15 @@ outer=2cm,
 	
 	\begin{flushleft}
 		\begin{large}\textbf{Spis treści}\end{large}
-		\textbf{
-			\\1. Wstęp }\\
+		\vspace{5mm}\\
+		\textbf{1. Wstęp }\\
 			\hspace{5mm}1.1. Cel pracy\\
 			\hspace{5mm}1.2. Zakres pracy\\
 			\hspace{5mm}1.3. Wstęp teoretyczny\\
+			\hspace{13mm}1.3.1. Problem poszukiwania optymalnej trasy\\
+			\hspace{13mm}1.3.2. VRP i CVRP\\
+			\hspace{13mm}1.3.3. Algorytmy przybliżone\\
+			\hspace{13mm}1.3.4. Algorytm genetyczny\\
 			\textbf{2. Opis projektu}\\
 			\hspace{5mm}2.1. Użyte technologie\\
 			\hspace{5mm}2.2. Opis aplikacji\\
@@ -98,28 +103,147 @@ outer=2cm,
 	\vspace{5mm} %5mm vertical space
 	
 	W pracy zagadnienie optymalizacji trasy rozważono dla problemu marszrutyzacji, czyli VRP (Vehicle Routing Problem) oraz CVRP (Capacity Vehicle Routing Problem). Projekt skupia się głównie na dwóch czynnikach decydujących o optymalności: długości trasy oraz zapełnieniu pojazdów ładunkiem. \\
-	Przy rozwiązywaniu problemu marszrutyzacji korzystano z algorytmów przybliżonych, a konkretniej algorytmu genetycznego, przede wszystkim ze względu na złożoność problemu, gdyż przy problemach bardziej złożonych dobrze sprawdzają się algorytmy przybliżone.Algorytm genetyczny wybrano również ze względu na jego uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. \\
+	Przy rozwiązywaniu problemu marszrutyzacji korzystano z algorytmów przybliżonych, a konkretniej algorytmu genetycznego, przede wszystkim ze względu na złożoność problemu, gdyż przy problemach bardziej złożonych dobrze sprawdzają się algorytmy przybliżone. Algorytm genetyczny wybrano również ze względu na jego uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. \\
 	
 	
 	\newpage
 	\begin{flushleft}
-		\begin{large}
+		\begin{LARGE}
 			\textbf{1.3. Wstęp teoretyczny}
-		\end{large}
+		\end{LARGE}
 	\end{flushleft}
+
+	\begin{large}
+		\textbf{1.3.1. Problem poszukiwania optymalnej trasy}
+	\end{large}
 	\vspace{5mm} %5mm vertical space
+	
+	Na podstawie \hyperlink{optymalizacja}{[1]}:\\
+	Optymalizacja- proces polegający na poszukiwaniu przy pomocy metod matematycznych najlepszego (ze względu na wybrane kryteria) rozwiązania pewnego problemu, z uwzględnieniem określonych ograniczeń. \\
+	Problem poszukiwania optymalnej trasy należy do ważnych zagadnień z zakresu planowania transportu. Optymalizacja trasy może skupiać się na różnych czynnikach, takich jak: długość trasy, koszty, czas podróży, itp.
+	Zazwyczaj optymalizacja ma na celu znalezienie najkrótszej trasy.\\
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Problem kombinatoryczny}
+		\end{center}
+	\end{large}
+	
+	Na podstawie \hyperlink{problemy}{[1]}:\\
+	\textbf{Problem kombinatoryczny}  jest to problem, który jest opisany przy pomocy skończonej ilości parametrów
+	wejściowych, a także warunków wymaganych do spełnienia przez dane wyjściowe. Problemy kombinatoryczne dzielimy na problemy:\\
+	- decyzyjne\\
+	- optymalizacyjne\\
+	- przeszukiwania
+	
+	\vspace{5mm}
+	\textbf{Problem decyzyjny} jest to skończony zbiór parametrów, np. funkcje, zbiory, grafy oraz pytanie na które można odpowiedzieć "tak" lub "nie".\\
+	
+	\textbf{Problem optymalizacyjny} to problem, który wymaga znalezienia ekstrumum określonej funkcji celu na podstawie podanego problemu kombinatorycznego. \\
+	
+	
+	\textbf{Problem przeszukiwania} jest to problem, który wymaga kompletnego rozwiązania lub odpowiedzi przeczącej jeśli rozwiązanie nie istnieje. Każdy problem decyzyjny i optymalizacyjny można przedstawić w postaci problemu przeszukiwania. 
+	
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Złożoność obliczeniowa}
+		\end{center}
+	\end{large}
+
+	Na podstawie \hyperlink{zlozonosc}{[1]}:\\
+	Problemy można podzielić na 2 główne klasy:\\
+	- \textbf{łatwe (P)}, tj. problemy, które można rozwiązać w czasie wielomianowym \\
+	- \textbf{trudne (NP)}, tj. problemy, które nie mają rozwiązań w czasie wielomianowym lub mniejszym, czyli zadania o złożoności wykładniczej lub większej\\
+	
+	Istnieje jeszcze podklasa problemów trudnych (NP), tzw. problemy \textbf{NP-zupełne (NPC)}, tj. problemy zupełne w klasie NP ze względu na redukcje wielomianowe. Problemy NPC to problemy, które należą do klasy NP przy czym dowolny problem należący do NP może być do nich zredukowany w czasie wielomianowym. Zatem jeśli udałoby się uzyskać rozwiązanie problemu NP-zupełnego w czasie wielomianowym, to można uzyskać rozwiązanie w czasie wielomianowym wszystkich problemów NP. Problemy NP-zupełne można postrzegać jako najtrudniejsze problemy klasy NP ze względu na wielomianową rozwiązywalność.\newpage
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Problem komiwojażera}
+		\end{center}
+	\end{large}
+
+	Poblem wyboru optymalnej trasy historycznie wywodzi się od problemu komiwojażera (Travelling Salesman Problem). 
+	Na podstawie \hyperlink{komiwojazer}{[1]}:\\
+	Problem komiwojażera – problem optymalizacyjny mający na celu znalezienie minimalnego cyklu Hamiltona w grafie pełnym ważonym. Jest to problem z kategorii NP- trudnych.\\
+	Słowne przedstawienie problemu:\\ 
+	Komiwojażer ma za zadanie odwiedzić n lokalizacji. Znane są odległości (czasem także cena i czas podróży ) między każdą parą lokalizacji.
+	Celem komiwojażera jest odwiedzenie wszystkich punktów (tylko raz) w jak najkrótszym czasie/ najkrótszą drogą/ najmniejszym kosztem, zaczynając w ustalonym punkcie i do niego wracając.\\
+	Matematyczne ujęcie problemu zgodnie ze wzorami Dantziga-Fulkersona-Johnsona \hyperlink{dfj}{[1]}:\\
+	Oznaczmy punkty do odwiedzenia numerami od 1 do n. Dalej oznaczmy:
+	\[ x_{ij} = 
+	\begin{cases}
+	1 &\mbox{jeśli trasa idzie z punktu i do j} \\
+	0 &\mbox{w przeciwnym wypadku}
+	\end{cases}
+	\]
+	Przyjmijmy $c_{ij}$ jako odległość z punktu $i$ do $j$. Wtedy problem komiwojażera może być zapisany jako problem programowania liniowego:\\
+	  
+	  \begin{equation}
+		  {min \sum\limits_{i=1}^{n} \sum\limits_{j \neq i, j=1}^{n}}c_{ij}x_{ij}:
+	  \end{equation}
+	  \begin{equation}
+	  	0 \le x_{ij} \le 1 \quad i,j = 1,...,n 
+	  \end{equation}
+	  \begin{equation}
+	  {min \sum\limits_{i=1, i \neq j}^{n}}x_{ij} = 1 \quad j = 1,...,n 
+	  \end{equation}
+	  \begin{equation}
+	  {min \sum\limits_{j=1, j \neq i}^{n}}x_{ij} = 1 \quad i = 1,...,n 
+	  \end{equation}
+	  \begin{equation}
+	  {\sum\limits_{i \in Q} \sum\limits_{j \in Q}}x_{ij} \le |Q|-1 \quad \forall Q \not\subseteq \{1,...,n\}, |Q| \ge 2
+	  \end{equation}
+	  Ostatnie ograniczenie formuły Dantziga-Fulkersona-Johnsona zapewnia, że nie ma żadnych podtras między początkowymi wierzchołkami, więc zwrócone rozwiązanie to pojedyncza trasa, a nie połączenie kilku mniejszych tras. 
+	
+	
+	
+	Problem komiwojażera można rozpatrywać jako:\\
+	1) symetryczny- gdzie dla dowolnych punktów X i Y odległość z X do Y jest taka sama jak z Y do X\\
+	2) asymetryczny- gdzie powyższe odległości mogą się różnić\\
+	
+	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji.\newpage
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Problem marszrutyzacji}
+		\end{center}
+	\end{large}
 
 	Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
-	VRP (Vehicle Routing Problem)- problem kombinatoryczny bazujący na zbiorach krawędzi i wierzchołków grafu G(V,E). Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Notacja: \\
-	- V jest zbiorem punktów do odwiedzenia i punktu początkowego,\\
-	- E jest zbiorem krawędzi łaczących punkty V,\\
-	- d jest wektorem pojemności towarów w punktach,\\
-	- k jest liczbą tras,\\
-	- C to pojemność pojazdu,\\
+	Problem marszrutyzacji polega na wyznaczeniu optymalnych tras dla określonej liczby środków transportu. Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Flota pojazdów ma za zadanie odwiedzenie zadanych punktów, z uwzględnieniem przyjętych ograniczeń. W ramach optymalizacji bierze się pod uwagę sumaryczny koszt pokonanych tras. \\
+	Matematyczne sformułowanie klasycznego problemu komiwojażera:\\
+	Rozpatrywany jest graf nieskierowany $G=(V,E)$, gdzie:\\
+	- V oznacza zbiór wierzchołków\\ 
+	- E oznacza zbiór krawędzi, do których przypisane są koszty przejazdu (również inne parametry, np. czas)
+	\\
+	Zadanie polega na zminimalizowaniu funkcji celu:
+	\begin{equation}
+	{minC=\sum\limits_{r \in R}\sum\limits_{f \in V}\sum\limits_{g \in V}}c_{fg}x_{fgr}
+	\end{equation}
+	gdzie:\\
+	r- pojazd należący do zbioru pojazdów R\\
+	f,g- wierzchołki grafu między, którymi porusza się pojazd\\
+	$c_{fg}$- koszt przejazdu między wierzchołkadmi f i g\\
+	$x_{fgr}$- zmienna przyjmująca wartości 0 lub 1 w zależności od tego czy pojazd wykonuje przejazd między wierzchołkami f i g (1 oznacza, że wykonuje) \\
 	
-	Ogólnie dla problemu CVRP rozwiązanie składa się z:\\
-	- zbioru \{$R_{1}$,...,$R_{k}$\} z V takiego, że:  $\sum_{j \in R_i} d_j \leq C, \quad 1 \leq i \leq k$ \\
-	- permutacji $\theta_i$ z $R_i \cup \{0\}$ określającej kolejność odwiedzonych punktów w trasie $i$\\
+	\hspace{-6mm}Ograniczenia:\\
+	- istanieje tylko jedna baza początkowa i końcowa, które odwiedza dokładnie jeden pojazd r. Dla wierzchołków pośrednich ilość pojazdów wjeżdżających równa się ilości pojazdów wyjeżdżających\\
+	
+	\begin{equation}
+	{\forall r \in R=\sum\limits_{g \in E}}x_{0,g,r}=1 \quad \text{dla bazy początkowej}
+	\end{equation}
+	\begin{equation}
+	{\forall r \in R=\sum\limits_{f \in E}}x_{f,n+1,r}=1 \quad \text{dla bazy końcowej}
+	\end{equation}
+	
+	
+
+	
+	
+	
+	
 	
 	Istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
 	- VRP with Time Windows- czyli uwzględnienie okien czasowych odbioru/ wysłania towaru\\
@@ -200,6 +324,21 @@ outer=2cm,
 	\renewcommand\refname{Źródła}
 	\begin{thebibliography}{}
 		\bibitem{vrp} 
+		{\hypertarget{optymalizacja}{\textcolor{blue}{
+		https://sjp.pwn.pl/slowniki/optymalizacja.html}}}
+	
+		{\hypertarget{optymalizacja}{\textcolor{blue}{
+		http://www.cs.put.poznan.pl/arybarczyk/TeoriaZlozonosc.pdf}}}
+	
+		{\hypertarget{zlozonosc}{\textcolor{blue}{
+		http://home.agh.edu.pl/~horzyk/lectures/pi/ahdydpiwykl8.html}}}
+
+		{\hypertarget{komiwojazer}{\textcolor{blue}{
+		Sysło M.M., Deo N., Kowalik J.S., Algorytmy optymalizacji dyskretnej, wyd. drugie, Warszawa: Wydawnictwo Naukowe PWN, 1995, ISBN 83-01-11818-0}}}
+	
+		{\hypertarget{dfj}{\textcolor{blue}{
+		Dantzig, George B. (1963), Linear Programming and Extensions, Princeton, NJ: PrincetonUP, pp. 545–7, ISBN 0-691-08000-3, sixth printing, 1974.}}}
+	
 		{\hypertarget{vrp}{\textcolor{blue}{
 		 Dantzig, George Bernard; Ramser, John Hubert (October 1959). "The Truck Dispatching Problem", https://andresjaquep.files.wordpress.com/2008/10/2627477-clasico-dantzig.pdf}}}
 		
