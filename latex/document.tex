@@ -206,6 +206,10 @@ outer=2cm,
 	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji.\newpage
 	
 	\begin{large}
+		\textbf{1.3.2. VRP i CVRP}
+	\end{large}
+	
+	\begin{large}
 		\begin{center}
 			\textbf{Problem marszrutyzacji}
 		\end{center}
@@ -213,7 +217,14 @@ outer=2cm,
 
 	Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
 	Problem marszrutyzacji polega na wyznaczeniu optymalnych tras dla określonej liczby środków transportu. Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Flota pojazdów ma za zadanie odwiedzenie zadanych punktów, z uwzględnieniem przyjętych ograniczeń. W ramach optymalizacji bierze się pod uwagę sumaryczny koszt pokonanych tras. \\
-	Matematyczne sformułowanie klasycznego problemu komiwojażera:\\
+	
+	\begin{large}
+		\begin{center}
+			\textbf{VRP}
+		\end{center}
+	\end{large} 
+
+	Matematyczne sformułowanie podstawowego problemu komiwojażera (VRP):\\
 	Rozpatrywany jest graf nieskierowany $G=(V,E)$, gdzie:\\
 	- V oznacza zbiór wierzchołków\\ 
 	- E oznacza zbiór krawędzi, do których przypisane są koszty przejazdu (również inne parametry, np. czas)
@@ -229,34 +240,134 @@ outer=2cm,
 	$x_{fgr}$- zmienna przyjmująca wartości 0 lub 1 w zależności od tego czy pojazd wykonuje przejazd między wierzchołkami f i g (1 oznacza, że wykonuje) \\
 	
 	\hspace{-6mm}Ograniczenia:\\
-	- istanieje tylko jedna baza początkowa i końcowa, które odwiedza dokładnie jeden pojazd r. Dla wierzchołków pośrednich ilość pojazdów wjeżdżających równa się ilości pojazdów wyjeżdżających\\
+	- istnieje tylko jedna baza początkowa i końcowa, które odwiedza dokładnie jeden pojazd r. Dla wierzchołków pośrednich ilość pojazdów wjeżdżających równa się ilości pojazdów wyjeżdżających\\
 	
 	\begin{equation}
-	{\forall r \in R=\sum\limits_{g \in E}}x_{0,g,r}=1 \quad \text{dla bazy początkowej}
+	{\forall r \in R\sum\limits_{g \in E}}x_{0,g,r}=1 \quad \text{dla bazy początkowej}
 	\end{equation}
 	\begin{equation}
-	{\forall r \in R=\sum\limits_{f \in E}}x_{f,n+1,r}=1 \quad \text{dla bazy końcowej}
+	{\forall r \in R\sum\limits_{f \in E}}x_{f,n+1,r}=1 \quad \text{dla bazy końcowej}
+	\end{equation}
+	\begin{equation}
+	{\forall r \in R \wedge \forall f \in V\sum\limits_{f \in E}x_{f,z,r} -  \sum\limits_{g \in E}}x_{z,g,r} = 0\quad \text{dla wierzchołków pośrednich}
 	\end{equation}
 	
+	\hspace{-6mm}- dla każdego punktu jest przypisany dokładnie jeden pojazd, który zabiera z niego cały ładunek, ładunki nie są rozdzielane\\
 	
+	\begin{equation}
+	{\forall f \in V \sum\limits_{g \in E} \sum\limits_{r \in R}}x_{fgr} = 1 
+	\end{equation}
+	
+	\begin{equation}
+	{\forall f \in E \wedge \forall g \in E \wedge \forall r \in R}x_{fgr} \in \{0,1\} 
+	\end{equation}
 
+	\begin{large}
+		\begin{center}
+			\textbf{CVRP}
+		\end{center}
+	\end{large} 
+	
+	CVRP (Capacity Vehicle Routing Problem) jest rozwinięciem problemu komiwojażera poprzez dodanie określonej pojemności pojazdów. Matematyczny model dla CVRP na podstawie \hyperlink{cvrp}{[7]} oraz \hyperlink{cvrp2}{[8]}:\\
+	
+	Funkcja celu:\\
+	\begin{equation}
+	{min=\sum\limits_{i = 1}^{n}\sum\limits_{j = 1}^{n}}C_{ij}y_{ij} + KC_{DO}
+	\end{equation}
+	
+	Przy ograniczeniach:\\
+	\begin{equation}
+	{\sum\limits_{i \in V}y_{ij} = 1, \forall i \in V \setminus \{O,D\}, i \neq j}
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{j \in V}y_{ij} = 1, \forall i \in V \setminus \{O,D\}, i \neq j}
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{j \in V}y_{Oj} = K}
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{i \in V}y_{iD} = K}
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{k \in K}x_{OD}^{k} = K}
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{k \in K}x_{Dj}^{k} = 0, \forall j \in V, j \neq 0 }
+	\end{equation}
+	
+	\begin{equation}
+	{U_{i} - U_{j} + qy_{ij} \leq q - d_{j}  \quad  \forall i, j \in V \setminus \{O,D\}, i \neq j \quad gdzie \quad d_{i} + d_{j} \leq q}
+	\end{equation}
+	
+	\begin{equation}
+	{d_{i} \leq u_{i} \leq q \quad \forall i \in V \setminus \{O,D\} }
+	\end{equation}
+	
+	Dla zmiennych decyzyjnych:\\
+	
+	\begin{equation}
+	{ y_{ij} \in \{0,1\} \quad \forall i,j \in V }
+	\end{equation}
+	
+	\begin{equation}
+	{ x_{ij}^{k} \in \{0,1\} \quad \forall i,j \in V, \forall k \in K }
+	\end{equation}
+	
+	gdzie:\\
+	i - miejsce odjazdu lub węzeł\\
+	j - węzeł przyjazdu\\
+	k - użyty pojazd, $k \in K$\\
+	|K| - ilość dostępnych pojazdów\\
+	V - zbiór węzłów\\
+	U - pojemność pojazdu\\
+	$d_{i}$ - wymaganie klienta w węźle i\\
+	$C_{ij}$ - koszt transportu lub dystans z węzła i do j\\
+	$x_{ij}^{k} = 1$ jeśli pojazd jest przypisany do przejścia\\ danej krawędzi z $i$ do $j$ ( w przeciwnym wypadku $x_{ij}^{k} = 1$)\\
+	$y_{ij} = 1$ jeśli trasa z węzła $i$ do $j$ istnieje (w przeciwnym wypadku $y_{ij} = 0$)\\
+	q - pojemność pojazdu k\\
+	O - węzeł startowy pojazdów (baza) $O_B$\\
+	D - węzeł końcowy (magazyn) $D_A$\\
+	$C_{DO}$ - koszt transportu lub dystans z $D_A$ do $O_B$\\
+	$KC_{DO}$ - koszt powrotu lub odległość wszystkich pojazdów z $D_A$ do $O_B$\\
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Inne warianty problemu marszrutyzacji}
+		\end{center}
+	\end{large} 
 	
 	
-	
-	
-	
-	Istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
+	Ponadto istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
 	- VRP with Time Windows- czyli uwzględnienie okien czasowych odbioru/ wysłania towaru\\
 	- Split Delivery VRP- czyli możliwość obsługi jednego klienta przez kilka pojazdów\\
 	- Vehicle Routing Problem with Multiple Trips (VRPMT)- czyli możliwość pokonania więcej niż jednej trasy przez jeden pojazd\\
-	- Capacitated Vehicle Routing Problem: CVRP- pojazdy mają ograniczoną pojemność\\ 
 	- inne
-
-	\vspace{5mm} %5mm vertical space
-
-	Powyższy problem można również rozwinąć o wiele innych czynników, jak np. kolejność odwiedzenia miejsc czy opcjonalnego odwiedzenia niektórych punktów lub funkcja kosztu może rozpatrywać różne parametry, np. czas wykonania zleceń czy ilość przewiezionego ładunku. Widać zatem, że problem marszrutyzacji jest zagadnieniem bardzo rozległym, a przy tym elastycznym, tzn. można go dostosować do wielu różnych problemów.
 	
-	\vspace{5mm}
+	\vspace{5mm} %5mm vertical space
+	
+	Powyższy problem można również rozwinąć o wiele innych czynników, jak np. kolejność odwiedzenia miejsc czy opcjonalnego odwiedzenia niektórych punktów lub funkcja kosztu może rozpatrywać różne parametry, np. czas wykonania zleceń czy ilość przewiezionego ładunku. Widać zatem, że problem marszrutyzacji jest zagadnieniem bardzo rozległym, a przy tym elastycznym, tzn. można go dostosować do wielu różnych problemów.\\
+	
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Rozwiązywanie problemu VRP}
+		\end{center}
+	\end{large} 
+	
+	Ze względu na trudność w znalezieniu optymalnych rozwiązań dla problemów związanych z trasowaniem pojazdów w dużej skali znaczny wysiłek badawczy został poświęcony metaheurystyce, takiej jak algorytmy genetyczne, wyszukiwanie Tabu czy symulowane wyżarzanie. Niektóre z najnowszych i skutecznych metaheurystyk dotyczących problemów z trasowaniem pojazdów osiągają rozwiązania w granicach 0,5\% lub 1\% wartości optymalnej dla przypadków problemowych liczących setki lub tysiące punktów dostawy. Metody te są również bardziej niezawodne pod takim względem, że można je łatwiej dostosować do różnych ograniczeń bocznych. Stosowanie technik metaheurystycznych jest często uprzywilejowane w przypadku aplikacji na dużą skalę ze skomplikowanymi ograniczeniami i zestawami decyzji.\\
+	
+	Na podstawie \hyperlink{metaheurystyka}{[1]}:\\ 
+	\textbf{Metaheurystykę} stanowią ogólne ramy algorytmiczne, często inspirowane naturą (np. algorytm mrówkowy), które zostały utworzone w celu rozwiązywania złożonych problemów związanych z optymalizacją. Od kilku dekad stanowią coraz większy obszar badań związanych z optymalizacją. Metaheurystyka jest skuteczną alternatywą
+	do bardziej klasycznych podejść w rozwiązywaniu problemów optymalizacyjnych, które zawierają w swoich wzorach matematycznych informacje nieokreślone konkretnie, stochastyczne i dynamiczne.\\
+	
+
+	
+	\newpage
 	
 	Na podstawie \hyperlink{ag}{[3]}:\\
 	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \newpage
@@ -327,23 +438,34 @@ outer=2cm,
 		{\hypertarget{optymalizacja}{\textcolor{blue}{
 		https://sjp.pwn.pl/slowniki/optymalizacja.html}}}
 	
-		{\hypertarget{optymalizacja}{\textcolor{blue}{
+		\bibitem{problemy} 
+		{\hypertarget{problemy}{\textcolor{blue}{
 		http://www.cs.put.poznan.pl/arybarczyk/TeoriaZlozonosc.pdf}}}
 	
+		\bibitem{zlozonosc} 
 		{\hypertarget{zlozonosc}{\textcolor{blue}{
 		http://home.agh.edu.pl/~horzyk/lectures/pi/ahdydpiwykl8.html}}}
 
+		\bibitem{komiwojazer} 
 		{\hypertarget{komiwojazer}{\textcolor{blue}{
 		Sysło M.M., Deo N., Kowalik J.S., Algorytmy optymalizacji dyskretnej, wyd. drugie, Warszawa: Wydawnictwo Naukowe PWN, 1995, ISBN 83-01-11818-0}}}
 	
+		\bibitem{dfj}
 		{\hypertarget{dfj}{\textcolor{blue}{
 		Dantzig, George B. (1963), Linear Programming and Extensions, Princeton, NJ: PrincetonUP, pp. 545–7, ISBN 0-691-08000-3, sixth printing, 1974.}}}
 	
+		\bibitem{vrp}
 		{\hypertarget{vrp}{\textcolor{blue}{
 		 Dantzig, George Bernard; Ramser, John Hubert (October 1959). "The Truck Dispatching Problem", https://andresjaquep.files.wordpress.com/2008/10/2627477-clasico-dantzig.pdf}}}
 		
 		\bibitem{cvrp} 
 		{\hypertarget{cvrp}{\textcolor{blue}{T. Ralphs, J. Hartman and M. Galati. "Capacitated Vehicle Routing and Some Related Problems". Some CVRP Slides. Rutgers University. 2001}}}
+		
+		\bibitem{cvrp2} 
+		{\hypertarget{cvrp2}{\textcolor{blue}{https://www.researchgate.net/publication/326129926\_Capacitated\_vehicle\_routing\_problem\\\_model\_for\_carriers}}}
+		
+		\bibitem{metaheurystyka} 
+		{\hypertarget{metaheurystyka}{\textcolor{blue}{Bianchi, Leonora; Marco Dorigo; Luca Maria Gambardella; Walter J. Gutjahr (2009). "A survey on metaheuristics for stochastic combinatorial optimization"}}}
 		
 		\bibitem{ag} 
 		{\hypertarget{ag}{\textcolor{blue}{
