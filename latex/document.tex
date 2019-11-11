@@ -343,9 +343,12 @@ outer=2cm,
 	
 	
 	Ponadto istnieją różne warianty problemu marszrutyzacji, na przykład:\\ 
-	- VRP with Time Windows- czyli uwzględnienie okien czasowych odbioru/ wysłania towaru\\
-	- Split Delivery VRP- czyli możliwość obsługi jednego klienta przez kilka pojazdów\\
-	- Vehicle Routing Problem with Multiple Trips (VRPMT)- czyli możliwość pokonania więcej niż jednej trasy przez jeden pojazd\\
+	- Vehicle Routing Problem with Time Windows- uwzględnienie okien czasowych odbioru/ wysłania towaru\\
+	- Split Delivery Vehicle Routing Problem- możliwość obsługi jednego klienta przez kilka pojazdów\\
+	- Vehicle Routing Problem with Multiple Trips (VRPMT)- możliwość pokonania więcej niż jednej trasy przez jeden pojazd\\
+	- Vehicle Routing Problem with Pickup and Delivery (VRPPD)- wiele towarów należy przetransportować z niektórych miejsc odbioru do innych miejsc dostawy\\
+	- Vehicle Routing Problem with Multiple Trips (VRPMT)- pojazdy mogą pokonywać więcej niż jedną trasę\\
+	- Open Vehicle Routing Problem (OVRP)- nie jest wymagane, aby pojazdy wracały do onego miejsca (magazynu)\\
 	- inne
 	
 	\vspace{5mm} %5mm vertical space
@@ -369,6 +372,77 @@ outer=2cm,
 	
 	\newpage
 	
+	
+	\begin{large}
+		\textbf{1.3.3. Algorytmy przybliżone}
+	\end{large}
+	\vspace{5mm} %5mm vertical space
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Algorytm}
+		\end{center}
+	\end{large}
+
+	Na podstawie \hyperlink{algorithm}{[3]}:\\
+	\textbf{Algorytm} to dowolna poprawnie zdefiniowana procedura obliczeniowa, która przyjmuje pewną wartość lub zestaw wartości jako dane wejściowe i generuje pewną wartość lub zestaw wartości jak wynik. Algorytm jest zatem sekwencją kroków obliczeniowych, które przekształcają dane wejściowe do wyjściowych.\\
+	Można także postrzegać algorytm jako narzędzie do rozwiązywania odpowiednio określonego problemu obliczeniowego. Opis problemu określa ogólnie pożądaną
+	relację między danymi wejściowymi, a wyjściowymi. Algorytm opisuje określoną procedurę obliczeniową do osiągnięcia tej relacji wejścia / wyjścia. Klasycznym przykładem, do którego wykorzystuje się algorytmy jest procedura sortowania, np. liczb. Sposób przedstawienia algoytmu może być różny- algorytm może być zapisany jako: schemat blokowy, pseudokod, lista kroków, itp. Przykładowy diagram blokowy ilustrujący algorytm sortowania bąbelkowego:\\
+	\begin{figure}[h]
+		\includegraphics[scale=0.75]{bubble_sort}
+		\centering
+		\\
+		{Rysunek1. Diagram blokowy algorytmu sortującego\hyperlink{bubble}{[1]}} 
+	\end{figure}
+	
+	Algorytm jest poprawny, jeśli dla każdej instancji wejściowej kończy się z poprawne wyjściem. Mówimy, że poprawny algorytm rozwiązuje dany problem obliczeniowy. Niepoprawny algorytm może w ogóle nie zostać zatrzymany dla niektórych instancji wejściowych lub	może się zakończyć z niepoprawną odpowiedzią. Czasami jednak niepoprawne algorytmy
+	mogą okazać się przydatne, jeśli możemy kontrolować ich poziom błędów. W dalszej części zostanie przybliżony pewien rodzaj algorytmów nazywany algorytmami przybliżonymi.\\
+	
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Algorytmy przybliżone}
+		\end{center}
+	\end{large}
+
+	Na podstawie \hyperlink{algorithm}{[3]}:\\
+	Wiele problemów o znaczeniu praktycznym jest NP-zupełnych, czyli takich, dla których nie ma rozwiązań w czasie wielomianowym. Często są one jednak zbyt ważne, aby je porzucić. Z tego powodu szuka się rozwiązań przybliżonych. Istnieją co najmniej trzy sposoby obejścia NP- zupełności:\\
+	- jeśli rzeczywiste ilości danych wejściowych są małe,
+	algorytm z wykładniczym czasem działania może być całkowicie zadowalający\\
+	- można wyodrębnić ważne specjalne przypadki, które można rozwiązać w czasie wielomianowym\\
+	- można zaproponować metody znalezienia prawie optymalnych rozwiązań w czasie wielomianowym (w najgorszym lub oczekiwanym przypadku)\\
+	
+	W praktyce przybliżona optymalizacja jest na ogół wystarczająca. Algorytm, który zwraca prawie optymalne
+	rozwiązanie nazywamy \textbf{algorytmem przybliżonym (aproksymacyjnym)}.\\
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Współczynniki wydajności dla algorytmów przybliżonych}
+		\end{center}
+	\end{large}
+	
+	Na podstawie \hyperlink{algorithm}{[3]}:\\
+	
+	Mówimy, że algorytm dla pewnego problemu ma wskaźnik aproksymacji $\rho(n)$, jeśli dla dowolnego wejścia wielkości n koszt C rozwiązania wytworzonego przez algorytm zawiera się
+	w ramach $\rho(n)$ współczynnika kosztu C* optymalnego rozwiązania:
+	
+	\begin{equation}
+		max \left(\frac{C}{C^*}, \frac{C^*}{C}\right) \leq \rho(n) 
+	\end{equation}
+	
+	Jeśli algorytm osiąga wskaźnik aproksymacji $\rho(n)$, nazywamy go algorytmem $\rho(n)$- aproksymacyjnym. Definicja wskaźnika aproksymacji algorytmu $\rho(n)$- aproksymacyjnego stosuje się zarówno dla problemów, w których jest minimalizcja jak i maxymalizacja funkcji celu.\\
+	Dla maxymalizacji jest: $0 \le C \leq C^*$ oraz wskaźnik $C^*/C$ daje czynnik mówiący o ile koszt rozwiązania optymalnego jest większy od kosztu rozwiązania przybliżonego.\\
+	Podobnie dla minimalizacji jest: $0 \le C^* \leq C$ oraz wskaźnik $C/C^*$ daje czynnik mówiący o ile koszt rozwiązania optymalnego jest większy od kosztu rozwiązania przybliżonego.\\
+	Ponieważ zakładamy, że wszystkie rozwiązania mają dodatni koszt, współczynniki te są dobrze zdefiniowane. Wskaźnik aproksymacji algorytmu przybliżonego jest nie mniejszy niż 1, skoro $C/C^* \leq 1$ implikuje $C/C^* \geq 1$.\\
+	Stąd algorytm przybliżony o wskaźniku aproksymacji wynoszącym 1 daje optymalne rozwiązanie, natomiast algorytm przybliżony o dużym wskaźniku aproksymacji może zwrócić rozwiązanie, które jest o wiele gorsze od optymalnego.\\
+	
+	\newpage
+	
+	\begin{large}
+		\textbf{1.3.4. Algorytm genetyczny}
+	\end{large}
+	\vspace{5mm} %5mm vertical space
+	
 	Na podstawie \hyperlink{ag}{[3]}:\\
 	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \newpage
 	
@@ -384,7 +458,7 @@ outer=2cm,
 	
 	
 	\begin{figure}[h]
-	\includegraphics[scale=0.8]{image}
+	\includegraphics[scale=0.8]{ag}
 	\centering
 	\\
 	{Rysunek1. Schemat algorytmu genetycznego} 
@@ -411,7 +485,7 @@ outer=2cm,
 	 Na podstawie \hyperlink{python}{[4]}:\\
 	 \textbf{Python}- jest językiem programowania ogólnego przeznaczenia. Jest to język wysokiego poziomu. Może być skutecznie wykorzystywany przy budowie w zasadzie każdego programu. Nie potrzebuje bezpośredniego dostępu do sprzętu komputerowego. Python nie jest optymalny dla programów, które mają duże ograniczenia niezawodności lub są zbudowane i utrzymywane przez wiele osób lub przez długi czas. Ma on jednak kilka zalet w porównaniu z innymi językami programowania, m.in.:\\
 	 - jest łatwy w nauce\\ 
-	 - posiada bardzo dużą liczbę darmowych i powszechnie dostępnych bibliotek, zapewniających rozszerzoną funkcjonalność\\ \\
+	 - posiada bardzo dużą liczbę darmowych i powszechnie dostępnych bibliotek, zapewniających rozszerzoną funkcjonalność\\ 
 	 
 	 Na podstawie \hyperlink{osm}{[5]}:\\
 	 \textbf{OSM (OpenStreetMap)}- jest to darmowa, edytowalna mapa całego świata, tworzona przez wolontariuszy, wydawana na licencji open-content. Licencja OpenStreetMap pozwala na bezpłatny dostęp do obrazów i podstawowych danych map. Projekt ma na celu promowanie nowych zastosowań tych danych. W pracy OSM zostało wykorzystane do zwizualizowania przebiegów tras i pokazania ich na rzeczywistej mapie. Przykład obrazu uzyskanego dzięki OSM \hyperlink{osm_example}{[6]}: \\
@@ -466,6 +540,14 @@ outer=2cm,
 		
 		\bibitem{metaheurystyka} 
 		{\hypertarget{metaheurystyka}{\textcolor{blue}{Bianchi, Leonora; Marco Dorigo; Luca Maria Gambardella; Walter J. Gutjahr (2009). "A survey on metaheuristics for stochastic combinatorial optimization"}}}
+		
+		\bibitem{algorithm} 
+		{\hypertarget{algorithm}{\textcolor{blue}{
+		Thomas H. Cormen; Charles E. Leiserson; Ronald L. Rivest; Clifford Stein (2009). Introduction To Algorithms (3rd ed.). MIT Press. ISBN 978-0-262-03384-8.}}}
+	
+		\bibitem{bubble} 
+		{\hypertarget{bubble}{\textcolor{blue}{
+		https://javarevisited.blogspot.com/2014/08/bubble-sort-algorithm-in-java-with.html}}}
 		
 		\bibitem{ag} 
 		{\hypertarget{ag}{\textcolor{blue}{

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.5)  10 NOV 2019 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.5)  11 NOV 2019 19:41
 entering extended mode
 **./document.tex
 (document.tex
@@ -591,97 +591,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 321--337
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--367
+Underfull \hbox (badness 10000) in paragraph at lines 367--370
 
  []
 
-[8] [9]
-<./images/image.png, id=95, 377.41pt x 469.755pt>
-File: ./images/image.png Graphic file (type png)
-<use ./images/image.png>
-Package pdftex.def Info: ./images/image.png  used on input line 387.
+[8]
+<./images/bubble_sort.png, id=90, 389.455pt x 568.1225pt>
+File: ./images/bubble_sort.png Graphic file (type png)
+<use ./images/bubble_sort.png>
+Package pdftex.def Info: ./images/bubble_sort.png  used on input line 392.
+(pdftex.def)             Requested size: 292.09053pt x 426.09082pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
+
+ []
+
+[9 <./images/bubble_sort.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 408--414
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Overfull \hbox (1.0594pt too wide) in paragraph at lines 433--438
+\T1/ptm/m/n/12 (-20) St¡d al-go-rytm przy-bli»ony o wska¹niku aproksy-macji wyn
+osz¡-cym 1 daje op-ty-malne rozwi¡zanie,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--438
+
+ []
+
+[10] [11]
+<./images/ag.png, id=113, 377.41pt x 469.755pt>
+File: ./images/ag.png Graphic file (type png)
+<use ./images/ag.png>
+Package pdftex.def Info: ./images/ag.png  used on input line 461.
 (pdftex.def)             Requested size: 301.9284pt x 375.80452pt.
- [10 <./images/image.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 411--415
+ [12 <./images/ag.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 485--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--415
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--418
-
- []
-
-<./images/osm_example.png, id=104, 1927.2pt x 953.5625pt>
+<./images/osm_example.png, id=122, 1927.2pt x 953.5625pt>
 File: ./images/osm_example.png Graphic file (type png)
 <use ./images/osm_example.png>
-Package pdftex.def Info: ./images/osm_example.png  used on input line 420.
+Package pdftex.def Info: ./images/osm_example.png  used on input line 494.
 (pdftex.def)             Requested size: 443.24669pt x 219.31476pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
-[11 <./images/osm_example.png>]
+[13 <./images/osm_example.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 436.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
- [12pdfTeX warning (ext4): destination with the same identifier (name{cite.vrp}
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 510.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{cite.vrp}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.491 \end{document}
+l.573 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{cite.osm}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.491 \end{document}
+l.573 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
  (document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 491.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 491.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 491.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 573.
  ) 
 Here is how much of TeX's memory you used:
- 8206 strings out of 492895
- 121650 string characters out of 3139973
- 255672 words of memory out of 3000000
- 11850 multiletter control sequences out of 15000+200000
- 47004 words of font info for 133 fonts, out of 3000000 for 9000
+ 8234 strings out of 492895
+ 121975 string characters out of 3139973
+ 255733 words of memory out of 3000000
+ 11856 multiletter control sequences out of 15000+200000
+ 47654 words of font info for 143 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,7n,38p,843b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,8n,38p,843b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.p
-fb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/u
-rw/times/utmr8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (12 pages, 1164561 bytes).
+fb><D:/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><D:/MiKTeX 2.9/fonts/type1/ur
+w/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2
+.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on document.pdf (14 pages, 1182654 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 16400 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 16405 words of extra memory for PDF output out of 17280 (max. 10000000)
 
