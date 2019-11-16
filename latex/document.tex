@@ -395,8 +395,8 @@ outer=2cm,
 		{Rysunek1. Diagram blokowy algorytmu sortującego\hyperlink{bubble}{[1]}} 
 	\end{figure}
 	
-	Algorytm jest poprawny, jeśli dla każdej instancji wejściowej kończy się z poprawne wyjściem. Mówimy, że poprawny algorytm rozwiązuje dany problem obliczeniowy. Niepoprawny algorytm może w ogóle nie zostać zatrzymany dla niektórych instancji wejściowych lub	może się zakończyć z niepoprawną odpowiedzią. Czasami jednak niepoprawne algorytmy
-	mogą okazać się przydatne, jeśli możemy kontrolować ich poziom błędów. W dalszej części zostanie przybliżony pewien rodzaj algorytmów nazywany algorytmami przybliżonymi.\\
+	Algorytm jest poprawny, jeśli dla każdej instancji wejściowej kończy się z poprawnym wyjściem. Mówimy, że poprawny algorytm rozwiązuje dany problem obliczeniowy. Niepoprawny algorytm może w ogóle nie zostać zatrzymany dla niektórych instancji wejściowych lub	może się zakończyć z niepoprawną odpowiedzią. Czasami jednak niepoprawne algorytmy
+	mogą okazać się przydatne, jeśli możemy kontrolować ich poziom błędów. W dalszej części zostanie opisany pewien rodzaj algorytmów nazywany algorytmami przybliżonymi.\\
 	
 	
 	\begin{large}
@@ -438,13 +438,100 @@ outer=2cm,
 	
 	\newpage
 	
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Algorytmy ewolucyjne}
+		\end{center}
+	\end{large}
+
+	Na podstawie \hyperlink{evolutionaryalgorithm}{[3]}:\\
+	\textbf{Algorytm ewolucyjny} jest to algorytm metaheurytycznej optymalizacji, należący do grupy algorytmów przybliżonych, który bazuje na populacji osobników, tworzących rozwiązania. Algorytm ewolucyjny jest inspirowany mechanizmami ewolucji biologicznej, jak np. mutacja, reprodukcja, selekcja. Potencjalne rozwiązania w tym algorytmie pełnią rolę jednostek w populacji. Odpowiednio dobrana funkcja celu określa jakość tych rozwiązań. Ewolucja populacji następuje po wielokrotnym zastosowaniu powyżej wspomnianych operatorów ewolucji. Algorytmy ewolucyjne często dobrze sprawdzają się do znajdowania przybliżonych rozwiązań dla problemów różnych typów, ponieważ nie czynią na początku żadnych założeń dotyczących skłaniania się ku potencjalnym "dobrym" rozwiązaniom. Są więc bardzo uniwersalne. Algorytmami podobnymi do ewolucyjnych są algorytmy rojowe, np. algorytm mrówkowy czy algorytm pszczeli.\\
+	
+	Algorytm ewolucyjny w krokach:\\
+	1. Generacja losowa początkowej populacji osobników (pierwsza generacja).\\
+	2. Obliczenie funkcji celu dla każdego osobnika w populacji.\\
+	3. Powtarzanie następujących kroków aż do osiągniecią odpowiedniej wartości funkcji celu lub maksymalnej ilości iteracji:
+	
+	\hspace{5mm}- wybierz najlepiej dopasowane osobniki do reprodukcji (rodzice)
+	
+	\hspace{5mm}- rozmnażanie osobników poprzez krzyżowanie oraz mutacje, w celu wydania nowego 
+	
+	\hspace{6mm} potomstwa (rozwiązań)
+	
+	\hspace{5mm}- oblicz funkcję celu dla nowo powstałych osobników
+	
+	\hspace{5mm}- pozostawienie jedynie najlepszych osobników (rozwiązań)\\
+	
+	\newpage
+	
 	\begin{large}
 		\textbf{1.3.4. Algorytm genetyczny}
 	\end{large}
 	\vspace{5mm} %5mm vertical space
 	
 	Na podstawie \hyperlink{ag}{[3]}:\\
-	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. \newpage
+	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. Z założenia w algorytmach genetycznych występuje element losowości, jednak fakt umiejętnego wykorzystania przeszłego doświadczenia w celu stworzenia nowych rozwiązań sprawia, że algorytm ten jest daleki od przypadkowego błądzenia. Taka metoda zyskuje na popularności ze względu na ograniczenia metod analitycznych.\\
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Metodologia i sposób działania}
+		\end{center}
+	\end{large}
+	
+	Ogólną koncepcją algorytmu genetycznego jest ewolucja populacji rozwiązań danego problemu optymalizacyjnego w kierunku coraz lepszych wartości funkcji celu. Każda jednostka w populacji posiada zbió właściwości (swoje chromosomy lub genotyp), który w ramach algorytmu zostaje zmieniony. Algorytm zazwyczaj rozpoczyna ewolucje bazując na losowo wygenerowanej populacji rozwiązań. Każdy cykl ewolucyjny tworzy nowe pokolenie. W każdym pokoleniu jest obliczana wartość funkcji celu dla każdego rozwiązania. Standardowo rozwiązanie prezentuje się jako tablica bitów. Poniżej opisano poszczególne kroki w AG:\\
+	
+	\begin{center}
+		\textbf{Inicjalizacja populacji}
+	\end{center}
+	
+	Rozmiar populacji początkowej może byc różny- zazwyczaj zawiera kilkaset lub kilka tysięcy osobników. Populacja początkowa jest generowana losowo, co powoduje, że rozwiązania nie są z góry "nakierowane" na pewien obszar.
+	
+	\begin{center}
+		\textbf{Operatory genetyczne}
+	\end{center}  
+	
+	Najczęściej operatorami genetycznymi są mutacja oraz krzyżowanie. Dla każdego nowego rozwiązania są wybierane dwa z poprzedniej populacji (rodzice). Dzięki operatorowi krzyżowania "produkują" oni nowe rozwiązanie (dziecko), które posiada zestaw cech odziedziczonych po rodzicach. Proces jest powtarzany w każdej iteracji. Dla jednej populacji ilość krzyżowań może być różna, zazwyczaj wynosi od kilkudziesięciu do kilkuset.
+	
+	\begin{figure}[h]
+		\includegraphics[scale=1]{cross}
+		\centering
+		\\
+		{Rysunek1. Przykład krzyżowania \hyperlink{cross}{[3]} } 
+	\end{figure}
+
+	\newpage
+
+	\begin{figure}[h]
+		\includegraphics[scale=1]{mutation}
+		\centering
+		\\
+		{Rysunek1. Przykład mutacji \hyperlink{mutation}{[3]} } 
+	\end{figure}
+	
+	\begin{center}
+		\textbf{Selekcja}
+	\end{center}    
+	
+	Proces selekcji jest dokonywany na podstawie funkcji celu: osobniki, które są najlepiej dostosowane, tzn. mają najwyższą/ najniższą wartość funkcji celu (w zależności od problemu) zostają dopuszczone do kolejnej iteracji- w ten sposób całość ewoluuje do coraz lepszych rozwiązań- dziecko, które otrzymało od rodziców najlepsze geny ma największą szanse "przetrwania".
+	
+	
+	\begin{center}
+		\textbf{Zakończenie}
+	\end{center} 	
+
+	Przerwanie działania algorytmu może nastąpić w różnych sytuacjach, w zależności od sformułowania algorytmu:\\
+	- uzyskano rozwiązanie, które spełnia minimalne kryteria\\
+	- wykonała się ustalona ilość iteracji\\
+	- manualne przerwanie algorytmu\\
+	- inne, np. kombinacja powyższych\\
+
+ 	\begin{large}
+ 		\begin{center}
+ 			\textbf{Przedstawienie algorytmu}
+ 		\end{center}
+ 	\end{large}
+ 
 	
 	Algorytm genetyczny w krokach:\\
 	1. Utworzenie początkowej populacji\\
@@ -454,17 +541,55 @@ outer=2cm,
 	5. Powtarzanie kroków 2-4 aż do spełnienia warunku stopu\\
 	6. Koniec algorytmu i wybór najlepszego osobnika
 	
-	\vspace{10mm}
-	
-	
 	\begin{figure}[h]
-	\includegraphics[scale=0.8]{ag}
-	\centering
-	\\
-	{Rysunek1. Schemat algorytmu genetycznego} 
-	\end{figure}
+		\includegraphics[scale=0.8]{ag}
+		\centering
+		\\
+		{Rysunek1. Schemat algorytmu genetycznego} 
+	\end{figure}	
+	
+	\newpage
+	\begin{large}
+		\begin{center}
+			\textbf{Różnice między algorytmem genetycznym (AG), a "tradycyjnymi" metodami}
+		\end{center}
+	\end{large}
+
+	
+	\hspace{-6mm}1. AG nie działają na dokładnych parametrach problemu, a na ich zakodowanej formie.\\
+	2. AG poszukują rozwiązań rozpoczynając nie od pojedynczego punktu, ale od pewnej grupy (populacji) rozwiązań.\\
+	3. W AG korzysta się jedynie z funkcji celu, a nie na jej pochodnych.\\
+	4. W AG wyboru dokonuje się na podstawie probabilistycznych reguł, a nie deterministycznych.\\
 	
 	
+	
+	
+	
+	\begin{large}
+		\begin{center}
+			\textbf{Zastosowania algorytmów genetycznych}
+		\end{center}
+	\end{large}
+	Algorytmy genetyczne mają spore zastosowanie w wielu dziedzinach, m.in. matematyce, technice, medycynie. Poniżej zostaly przedstawione niektóre z nich:
+	
+	\begin{center}
+		\textbf{Problemy NP-trudne}
+	\end{center}	
+	Oczywistym zastosowaniem algorytmów genetycznych (bazujących na metaheurystyce) jest rozwiązywanie problemów, dla których nie da się znaleźć optymalnego wyniku w czasie wielomianowym. Przykładowym zagadnieniem z tej kategorii może być, np. problem komiwojażera. Zastosowanie AG pozwala otrzymać całkiem dobre rozwiązania w niedługim czasie- nie gwarantuje nam jednak znalezienia rozwiązania optymalnego. AG dobrze nadają się również do wyszukiwania przybliżeń ekstremów funkcji, których nie można znaleźć analitycznie.\\
+
+	
+	\begin{center}
+		\textbf{Harmonogramy}
+	\end{center}
+	
+	Algorytmy genetyczne dobrze nadają się do ustalania różnego rodzaju harmonogramów, jak np. plany zajęć, godziny pracy, procesy produkcyjne. Pozwala to na optymalne rozplanowanie czasu z uwzględnieniem odpowiednich parametrów, np. odpoczynek i sen dla zawodowych kierowców.  
+	
+	
+	\begin{center}
+		\textbf{Obwody elektryczne}
+	\end{center}
+
+	AG są wykorzystywane także do projektowania obwodów elektrycznych. Jest to problem bardzo praktyczny, a inżynierowie do zaprojektowania odpowiedniego obwodu nie koniecznie potrzebują najlepszego możliwego rozwiązania. W takich sytuacjach AG jest bardzo wydajny oraz ze względu na fakt, że AG nie bazuje na wcześniejszych rozwiązaniach i schematach może okazać się źródłem nowych pomysłów w budowaniu obwodu elektrycznego. 
 	
 	\newpage
 	\begin{flushleft}
@@ -548,10 +673,24 @@ outer=2cm,
 		\bibitem{bubble} 
 		{\hypertarget{bubble}{\textcolor{blue}{
 		https://javarevisited.blogspot.com/2014/08/bubble-sort-algorithm-in-java-with.html}}}
+	
+		\bibitem{evolutionaryalgorithm} 
+		{\hypertarget{evolutionaryalgorithm}{\textcolor{blue}{
+		 Vikhar, P. A. "Evolutionary algorithms: A critical review and its future prospects". Proceedings of the 2016 International Conference on Global Trends in Signal Processing, Information Computing and Communication (ICGTSPICC). Jalgaon, 2016, pp. 261-265. ISBN 978-1-5090-0467-6.}}}
+	
+
 		
 		\bibitem{ag} 
 		{\hypertarget{ag}{\textcolor{blue}{
 		D. E. Goldberg: Algorytmy genetyczne i ich zastosowania. Warszawa: WNT, 1998. (pol.)}}}
+	
+		\bibitem{cross} 
+		{\hypertarget{cross}{\textcolor{blue}{
+		https://www.tutorialspoint.com/genetic\_algorithms/genetic\_algorithms\_crossover.htm}}}
+	
+		\bibitem{mutation} 
+		{\hypertarget{mutation}{\textcolor{blue}{
+		https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3}}}
 	
 		\bibitem{python} 
 		{\hypertarget{python}{\textcolor{blue}{
