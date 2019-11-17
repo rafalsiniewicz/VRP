@@ -28,7 +28,7 @@ class Individual:
 		return capacity
 	def Show(self):
 		for i in range(0,len(self.individual)):
-			print(self.individual[i].Get(),end="")
+			print(self.individual[i].Get())
 		print()
 	def AddLength(self, route):
 		self.length += route.GetLength()

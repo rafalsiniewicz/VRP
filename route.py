@@ -42,7 +42,7 @@ END = {"END":[50.057767, 19.931321]}
 	
 class Route:
 	def __init__(self, _capacity = 10):
-		self.route=OrderedDict()
+		self.route = OrderedDict()
 		self.capacity = _capacity
 	def AddPlace(self,name,values):
 		if name != None and self.capacity - values[2] >= 0: 
@@ -73,6 +73,14 @@ class Route:
 			#length += Street_distance(G, get_nearest_node(G, list(self.route.values())[i]), get_nearest_node(G, list(self.route.values())[i+1]))
 			#print(i)
 		return length
+
+	'''def GetStreetLength(self):
+		length = 0 
+		for i in range(0, len(self.route)-1):
+			length += shortest_path_length(G, get_nearest_node(G, list(self.route.values())[i]), get_nearest_node(G,list(self.route.values())[i+1]), weight='length')
+
+		return length'''
+		
 
 	def FindNearest(self,place,value,data):
 		distances = OrderedDict()

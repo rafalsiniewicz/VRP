@@ -212,14 +212,14 @@ class Population:
         self.population.sort(key=Measure)
 
     def SortbyDistance(self):
-        def Measure(individual):
-            return individual.GetLength()
-        self.population.sort(key=Measure)
+        #def Measure(individual):
+        #    return individual.GetLength().km
+        self.population.sort(key=lambda x: (x.GetLength(), x.GetCapacity()))
 
     def SortbyCapacity(self):
-        def Measure(individual):
-            return individual.GetCapacity()
-        self.population.sort(key=Measure)
+        #def Measure(individual):
+        #    return individual.GetCapacity()
+        self.population.sort(key=lambda x: (x.GetCapacity(), x.GetLength()))
         
 
     def BestIndividual(self):

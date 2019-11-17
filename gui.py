@@ -33,7 +33,7 @@ class App(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.program = Program()
-        self.program.ImportData("krakow.json")
+        self.program.ImportData("swiat.json")
         #self.names = ["A", "B", "C", "D"]
         self.names = []
         for place,position in self.program.GetData().Get().items():
@@ -168,7 +168,7 @@ class App(QWidget):
         elif self.distance_capacity.isChecked():
             self.program.GetPopulation().SortPopulation()
 
-        self.program.ShowLengths()
+        self.program.ShowLengthsandCapacity()
         self.program.GetPopulation().RemoveStart()
         
         for i in range(0,1):
@@ -182,9 +182,9 @@ class App(QWidget):
                 #print("distance_capacity")
                 self.program.PlayRound("distance_capacity", vehicle_capacity)    
 
-        self.program.ShowLengths()
+        self.program.ShowLengthsandCapacity()
         self.program.ShowBest()
-        print(self.program.GetPopulation().BestIndividual().GetLength())
+        print("length: ", self.program.GetPopulation().BestIndividual().GetLength(), "capacity: ", self.program.GetPopulation().BestIndividual().GetCapacity())
         self.create_map(self.program)
    
         #self.program.ShowPopulation()

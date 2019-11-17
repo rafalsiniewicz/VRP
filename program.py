@@ -1,6 +1,7 @@
 from numpy import *
 from population import * 
 from data_import import *
+from osmnx import *
 
 class Program:
 	def __init__(self):
@@ -34,11 +35,11 @@ class Program:
 		names = []
 		for place, position in self.data.Get().items():
 			names.append(place)
-		print(names)
+		#print(names)
 		return names
 
 	def SelectData(self, list_of_places):
-		self.ImportData("krakow.json")
+		self.ImportData("swiat.json")
 		new_dict = self.data.Get().copy()
 		for place, position in new_dict.items():
 			stay = False
@@ -98,9 +99,15 @@ class Program:
 		print()
 
 	def ShowLengths(self):
-		self.population.SortPopulation()
+		#self.population.SortPopulation()
 		for i in range(0,self.size):
 			print(self.population.Getn(i).GetLength())
+		print()
+
+	def ShowLengthsandCapacity(self):
+		#self.population.SortPopulation()
+		for i in range(0,self.size):
+			print("length: ", self.population.Getn(i).GetLength(), "capacity: ", self.population.Getn(i).GetCapacity())
 		print()
 
 
