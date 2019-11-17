@@ -90,7 +90,7 @@ class Program:
 				self.population.SortbyCapacity()
 			self.population.LeavenBest(number_of_individuals_to_stay)
 
-		self.population.SortPopulation()
+		#self.population.SortPopulation()
 
 
 	def ShowPopulation(self):

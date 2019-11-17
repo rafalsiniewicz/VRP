@@ -34,11 +34,26 @@ class App(QWidget):
         super().__init__(parent)
         self.program = Program()
         self.program.ImportData("swiat.json")
-        #self.names = ["A", "B", "C", "D"]
-        self.names = []
+        # 1. option:
+        '''self.names = ["A", "B", "C", "D"]
         for place,position in self.program.GetData().Get().items():
             self.names.append(place)
+        self.program.SelectData(self.names)'''
+        # 2. option:
+        '''self.names = []
+        for place,position in self.program.GetData().Get().items():
+            self.names.append(place)
+        self.program.SelectData(self.names)'''
+
+        # 3. option:
+        self.names = []
+        i = 0
+        for place,position in self.program.GetData().Get().items():
+            if i < 30:
+                self.names.append(place)
+            i += 1
         self.program.SelectData(self.names)
+        
         #self.program.InitializePopulation(3,100)
         #self.interface()
         self.initUI()
@@ -98,17 +113,24 @@ class App(QWidget):
         self.l1.setText("number of vehicles")
         self.l1.move(250, 5)
         self.number_of_vehicles = QLineEdit(self)
-        self.number_of_vehicles.setPlaceholderText("Please enter number of vehicles")
+        self.number_of_vehicles.setText("3")
         self.number_of_vehicles.move(250, 30)
 
         #vehicles capacity#
         self.l2 = QLabel(self)
         self.l2.setText("vehicles capacity")
-        self.l2.move(400, 5)
+        self.l2.move(350, 5)
         self.vehicles_capacity = QLineEdit(self)
-        self.vehicles_capacity.setPlaceholderText("Please enter capacity")
-        self.vehicles_capacity.move(400, 30)
+        self.vehicles_capacity.setText("10")
+        self.vehicles_capacity.move(350, 30)
 
+
+        self.l3 = QLabel(self)
+        self.l3.setText("number of iterations")
+        self.l3.move(450, 5)
+        self.number_of_iterations = QLineEdit(self)
+        self.number_of_iterations.setText("50")
+        self.number_of_iterations.move(450, 30)
 
     def initUI(self):
         self.resize(640, 480)
@@ -174,13 +196,13 @@ class App(QWidget):
         for i in range(0,1):
             if self.distance.isChecked():
                 #print("distance")
-                self.program.PlayRound("distance", vehicle_capacity)
+                self.program.PlayRound("distance", vehicle_capacity, number_of_cycles = int(self.number_of_iterations.text()))
             elif self.capacity.isChecked():
                 #print("capacity")
-                self.program.PlayRound("capacity", vehicle_capacity)
+                self.program.PlayRound("capacity", vehicle_capacity, number_of_cycles = int(self.number_of_iterations.text()))
             elif self.distance_capacity.isChecked():
                 #print("distance_capacity")
-                self.program.PlayRound("distance_capacity", vehicle_capacity)    
+                self.program.PlayRound("distance_capacity", vehicle_capacity, number_of_cycles = int(self.number_of_iterations.text()))    
 
         self.program.ShowLengthsandCapacity()
         self.program.ShowBest()
