@@ -39,7 +39,7 @@ outer=2cm,
 	\vfill
 	\begin{flushleft}
 		Autor: Rafał Siniewicz \newline
-		Kieunek studiów: Automatyka i automatyka \newline 
+		Kierunek studiów: Automatyka i automatyka \newline 
 		Opiekun: dr inż. Joanna Kwiecień \newline
 	
 	\end{flushleft}
@@ -52,21 +52,28 @@ outer=2cm,
 		\begin{large}\textbf{Spis treści}\end{large}
 		\vspace{5mm}\\
 		\textbf{1. Wstęp }\\
-			\hspace{5mm}1.1. Cel pracy\\
-			\hspace{5mm}1.2. Zakres pracy\\
-			\hspace{5mm}1.3. Wstęp teoretyczny\\
-			\hspace{13mm}1.3.1. Problem poszukiwania optymalnej trasy\\
-			\hspace{13mm}1.3.2. VRP i CVRP\\
-			\hspace{13mm}1.3.3. Algorytmy przybliżone\\
-			\hspace{13mm}1.3.4. Algorytm genetyczny\\
-			\textbf{2. Opis projektu}\\
-			\hspace{5mm}2.1. Użyte technologie\\
-			\hspace{5mm}2.2. Opis aplikacji\\
-			\textbf{3. Dokumentacja i działanie aplikacji}\\
-			\textbf{4. Testy}\\
-			\hspace{5mm}4.1. Sprawdzenie poprawnosci wczytywanych danych\\
-			\hspace{5mm}4.2. Dzialanie dla roznych danych i sprawdzenie optymalnosci otrzymanego rozwiazania\\
-			\textbf{5. Podsumowanie}\\
+			\hspace{5mm}1.1. Ogólne omówienie pracy\\
+			\hspace{5mm}1.2. Cel pracy\\
+			\hspace{5mm}1.3. Zakres pracy\\
+		\textbf{2. Zagadnienie poszukiwania najlepszej trasy }\\
+			\hspace{5mm}2.1. Problem znalezienia trasy optymalnej\\
+			\hspace{5mm}2.2. TSP\\
+			\hspace{5mm}2.3. VRP\\
+			\hspace{5mm}2.4. CVRP\\
+		\textbf{3. Algorytmy przybliżone w problemie
+			optymalizacji trasy }\\
+			\hspace{5mm}3.1. Algorytmy przybliżone\\
+			\hspace{5mm}3.2. Algorytmy ewolucyjne\\
+			\hspace{5mm}3.3. Algorytm genetyczny\\
+		\textbf{4. Opis projektu}\\
+			\hspace{5mm}4.1. Użyte technologie\\
+			\hspace{5mm}4.2. Opis aplikacji\\
+			\hspace{5mm}4.3. Implementacja AG\\
+		\textbf{5. Działanie aplikacji}\\
+		\textbf{6. Testy}\\
+			\hspace{5mm}6.1. Sprawdzenie poprawnosci wczytywanych danych\\
+			\hspace{5mm}6.2. Dzialanie dla roznych danych i sprawdzenie optymalnosci otrzymanego rozwiazania\\
+		\textbf{7. Podsumowanie}\\
 		
 	\end{flushleft}
 	\newpage
@@ -74,103 +81,89 @@ outer=2cm,
 	%\begin{flushleft}
 		
 	\begin{flushleft}
-		\begin{large}
+		\begin{LARGE}
 			\textbf{1. Wstęp }
+		\end{LARGE}
+	\end{flushleft}
+	
+	\begin{flushleft}
+		\begin{large}
+			\textbf{1.1. Ogólne omówienie pracy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
 	Transport od zawsze pełnił bardzo ważną rolę w życiu społeczenśtw. W przeciągu wieków zmieniały się środki transpotu, jego metody, a także szybkość przemieszaczania ludzi oraz towarów. Za każdym jednak razem wyzwanie stanowiło jak najoptymalniejsze przeprowadzenie procesu transportu.
 	Szczególnie w dzisiejszych czasach zaplanowanie tras w taki sposób, aby zminimalizować czas ich pokonania- co wiąże się z mniejszymi kosztami oraz emisjami spalin- jest bardzo cenne. Również zwyklejsze sytuacje, jak np. zaplanowanie dojazdu do pracy (komunikacją miejską lub samochodem) wymagają od wielu osób skorzystania z odpowiednich narzędzi (świadczy o tym chociażby popularność google maps czy aplikacji jakdojade) przeszukujących wiele możliwych tras i wybierających tą najlepszą. Widać zatem jak dużą rolę odgrywa w życiu niemalże każdego dobranie odpowiedniej trasy dla danej podróży.\\ 
-	Problem optymalizacji trasy jest bardzo powszechny i wielokrotnie studiowany, zwłaszcza w badaniach operacyjnych, teorii grafów czy logistyce i dziedzinach pokrewnych. W teorii najczęściej dąży się do uzyskania jak najkrótszej trasy, choć problem można rozwinąć o wiele różnych czynników, które wpływają na przebieg trasy, np. jakość nawierzchni czy określona pojemność pojazdów.
-	\vspace{5mm} %5mm vertical space
+	
+	Problem optymalizacji trasy jest bardzo powszechny i wielokrotnie studiowany, zwłaszcza w badaniach operacyjnych, teorii grafów czy logistyce i dziedzinach pokrewnych. W teorii najczęściej dąży się do uzyskania jak najkrótszej trasy, choć problem można rozwinąć o wiele różnych czynników, które wpływają na przebieg trasy, np. jakość nawierzchni czy określona pojemność pojazdów.\\
+	
+	Problemy optymalizacyjne rozwiązuje się przy pomocy algorytmów. Jest to kolejne ważne zagadnienie w tej pracy. Istnieje wiele różnych typów i rodzajów algorytmów, jednak z perspektywy rozwiązywania zadań optymalizacyjnych szczególnie istotna wydaje się podgrupa algorytmów zwana algorytmami przybliżonymi. Pozwalają one na bardziej praktyczne podejście do rzeczywistego problemu, tak by osiągnąć rozwiązanie zadowalające, ale niekoniecznie optymalne.
+	Ze względu na bardzo dużą ilość obliczeń potrzebnych do wykonania większości algorytmów, a w szczególności tych mających za zadanie rozwiązanie problemów optymalizacyjnych, do ich wykonania używa się specjalnie utworzonych programów komputerowych. Podobnie i w tej pracy, w celu rozwiązania problemu i znalezienia zadowalającej trasy napisano program komputerowy, który automatyzuje cały proces oraz pozwala na jego wielokrotne użycie, a także możliwość wizualizacji.\\ 
+	
+	
+	Spora część wiedzy wykorzystanej w tej pracy pochodzi ze źródeł internetowych, książek, a także materiałów pochodzących z zajęć dotyczących matematycznych metod wspomagania decyzji oraz badań operacyjnych. Jest to wiedza ogólnie dostępna, a jej zakres został szczegółowo zbadany na przestrzeni lat w wielu pozycjach literatury naukowej.\\
+	
+	Praca została podzielona na 7 rozdziałów- każdy zawierający kilka podrozdziałów i szerzej omówionych zagadnień. Na początku jest wstęp zawierający ogólne omówienie pracy, jej cel i zakres. Kolejny rozdział dotyczy poszukiwania optymalnej trasy w sensie ogólnym oraz przybliża najbardziej znane problemy z tej dziedziny badań naukowych. Następnie opisano metody wykorzystane przy rozwiązywaniu problemu, który porusza praca, tj. algorytmy ewolucyjne, a w szczególności ewolucyjne. W następnej kolejności omówiono wykonany projekt. Kolejny rozdział opisuje działanie aplikacji. W następnym zawarto opis przeprowadzonych testów. Na końcu pracy znajduje się rozdział podsumowujący, w którym zostały wyciągnięte wnioski dotyczące napisanej pracy oraz działania samej aplikacji.
+	
+	\newpage
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{1.1. Cel pracy}
+			\textbf{1.2. Cel pracy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
-	Praca ma na celu stworzenie aplikacji komputerowej wraz z interfejsem graficznym służącej do obliczania optymalnej trasy na podstawie odpowiednich danych. Optymalna trasa zostanie obliczona przy pomocy odpowiednich algorytmów opisanych w poniższym wstępie teoretycznym. Program będzie również wyświetlał przebiegi tras w formie graficznej wraz z zaznaczeniem poszczególnych punktów na mapie. Całość ma stanowić ujednolicony i łatwy w użyciu system, w którym można ustalać parametry, takie jak, np. ilość pojazdów i ich pojemności, współrzędne geograficzne punktów, a także uzyskać informacje o długości trasy, jej przebiegu i innych statystykach dotyczących rozwiązywanego problemu.  
+	Praca ma na celu stworzenie aplikacji komputerowej oraz interfejsu graficznego napisanych przy użyciu języka programowania python. Aplikacja służy do obliczania optymalnej trasy na podstawie odpowiednich danych. Optymalna trasa jest obliczona przy pomocy odpowiednich algorytmów opisanych w poniższym wstępie teoretycznym. Program wyświetla również przebiegi tras w formie graficznej wraz z zaznaczeniem poszczególnych punktów na mapie. Całość stanowi ujednolicony i łatwy w użyciu system, w którym można ustalać parametry, takie jak, np. ilość pojazdów i ich pojemności, współrzędne geograficzne punktów, a także daje możliwość uzysknia informacji o długości trasy, jej przebiegu i innych statystykach dotyczących rozwiązywanego problemu.  
 	\vspace{5mm} %5mm vertical space
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{1.2. Zakres pracy}
+			\textbf{1.3. Zakres pracy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
-	W pracy zagadnienie optymalizacji trasy rozważono dla problemu marszrutyzacji, czyli VRP (Vehicle Routing Problem) oraz CVRP (Capacity Vehicle Routing Problem). Projekt skupia się głównie na dwóch czynnikach decydujących o optymalności: długości trasy oraz zapełnieniu pojazdów ładunkiem. \\
-	Przy rozwiązywaniu problemu marszrutyzacji korzystano z algorytmów przybliżonych, a konkretniej algorytmu genetycznego, przede wszystkim ze względu na złożoność problemu, gdyż przy problemach bardziej złożonych dobrze sprawdzają się algorytmy przybliżone. Algorytm genetyczny wybrano również ze względu na jego uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. \\
+	W pracy zagadnienie optymalizacji trasy rozważono dla problemu marszrutyzacji, czyli VRP (Vehicle Routing Problem) oraz CVRP (Capacity Vehicle Routing Problem), a także problemu komiwojażera jako szczególny przypadek problemu marszrutyzacji z jednym pojazdem. Projekt skupia się głównie na dwóch czynnikach decydujących o optymalności: długości trasy oraz (opcjonalnie) zapełnieniu pojazdów ładunkiem. \\
+	Przy rozwiązywaniu problemu marszrutyzacji/ komiwojażera korzystano z algorytmów przybliżonych, a konkretniej algorytmu genetycznego, ze względu na fakt, że są to problemy N-P trudne. Przy rozwiązywaniu takich problemów dobrze sprawdzają się właśnie algorytmy przybliżone. Algorytm genetyczny wybrano ze względu sporą ilość opracowań na jego temat, ale również z uwagi na jego uniwersalność, możliwość uzyskania stosunkowo dobrych wyników w krótkim czasie oraz prostą koncepcję podejścia do rozwiązania. \\
+	
 	
 	
 	\newpage
 	\begin{flushleft}
 		\begin{LARGE}
-			\textbf{1.3. Wstęp teoretyczny}
+			\textbf{2. Zagadnienie poszukiwania najlepszej trasy}
 		\end{LARGE}
 	\end{flushleft}
 
-	\begin{large}
-		\textbf{1.3.1. Problem poszukiwania optymalnej trasy}
-	\end{large}
+
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2.1. Problem znalezienia trasy optymalnej}
+		\end{large}
+	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
-	Na podstawie \hyperlink{optymalizacja}{[1]}:\\
-	Optymalizacja- proces polegający na poszukiwaniu przy pomocy metod matematycznych najlepszego (ze względu na wybrane kryteria) rozwiązania pewnego problemu, z uwzględnieniem określonych ograniczeń. \\
-	Problem poszukiwania optymalnej trasy należy do ważnych zagadnień z zakresu planowania transportu. Optymalizacja trasy może skupiać się na różnych czynnikach, takich jak: długość trasy, koszty, czas podróży, itp.
-	Zazwyczaj optymalizacja ma na celu znalezienie najkrótszej trasy.\\
+	Optymalizacja trasy polega na znajdowaniu przy pomocy metod matematycznych najlepszego (biorąc pod uwage wybrane kryteria) rozwiązania z uwzględnieniem ściśle określonych ograniczeń. Problem poszukiwania optymalnej trasy należy do ważnych zagadnień z zakresu planowania transportu. Historycznie wywodzi się od problemu komiwojażera (Travelling Salesman Problem). Optymalizacja trasy może skupiać się na różnych czynnikach, takich jak: długość trasy, koszty, czas podróży, itp. Zazwyczaj jednak optymalizacja ma na celu znalezienie najkrótszej trasy.\\
+	Problem poszukiwania najkrótszej trasy najczęściej dotyczy wspomnianego wyżej problemu komiwojażera, ale także problemu marszrutyzacji czy innych, np. znajdowania najkrótszej ścieżki w grafie. Ze względu na to, że większość problemów z zakresu optymalizcji trasy jest NP-trudnych (w tym także problem komiwojażera oraz marszrutyzacji, które zostały opisane poniżej) rozwiązuje się je najczęściej przy pomocy algorytmów przybliżonych, tzn. takich, które nie dostarczają rozwiązania optymalnego, a jedynie zadowalające względem pewnych ustalonych kryteriów. 
 	
-	\begin{large}
-		\begin{center}
-			\textbf{Problem kombinatoryczny}
-		\end{center}
-	\end{large}
-	
-	Na podstawie \hyperlink{problemy}{[1]}:\\
-	\textbf{Problem kombinatoryczny}  jest to problem, który jest opisany przy pomocy skończonej ilości parametrów
-	wejściowych, a także warunków wymaganych do spełnienia przez dane wyjściowe. Problemy kombinatoryczne dzielimy na problemy:\\
-	- decyzyjne\\
-	- optymalizacyjne\\
-	- przeszukiwania
-	
-	\vspace{5mm}
-	\textbf{Problem decyzyjny} jest to skończony zbiór parametrów, np. funkcje, zbiory, grafy oraz pytanie na które można odpowiedzieć "tak" lub "nie".\\
-	
-	\textbf{Problem optymalizacyjny} to problem, który wymaga znalezienia ekstrumum określonej funkcji celu na podstawie podanego problemu kombinatorycznego. \\
-	
-	
-	\textbf{Problem przeszukiwania} jest to problem, który wymaga kompletnego rozwiązania lub odpowiedzi przeczącej jeśli rozwiązanie nie istnieje. Każdy problem decyzyjny i optymalizacyjny można przedstawić w postaci problemu przeszukiwania. 
-	
-	
-	\begin{large}
-		\begin{center}
-			\textbf{Złożoność obliczeniowa}
-		\end{center}
-	\end{large}
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2.2. TSP}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
 
-	Na podstawie \hyperlink{zlozonosc}{[1]}:\\
-	Problemy można podzielić na 2 główne klasy:\\
-	- \textbf{łatwe (P)}, tj. problemy, które można rozwiązać w czasie wielomianowym \\
-	- \textbf{trudne (NP)}, tj. problemy, które nie mają rozwiązań w czasie wielomianowym lub mniejszym, czyli zadania o złożoności wykładniczej lub większej\\
 	
-	Istnieje jeszcze podklasa problemów trudnych (NP), tzw. problemy \textbf{NP-zupełne (NPC)}, tj. problemy zupełne w klasie NP ze względu na redukcje wielomianowe. Problemy NPC to problemy, które należą do klasy NP przy czym dowolny problem należący do NP może być do nich zredukowany w czasie wielomianowym. Zatem jeśli udałoby się uzyskać rozwiązanie problemu NP-zupełnego w czasie wielomianowym, to można uzyskać rozwiązanie w czasie wielomianowym wszystkich problemów NP. Problemy NP-zupełne można postrzegać jako najtrudniejsze problemy klasy NP ze względu na wielomianową rozwiązywalność.\newpage
-	
-	\begin{large}
-		\begin{center}
-			\textbf{Problem komiwojażera}
-		\end{center}
-	\end{large}
-
-	Poblem wyboru optymalnej trasy historycznie wywodzi się od problemu komiwojażera (Travelling Salesman Problem). 
 	Na podstawie \hyperlink{komiwojazer}{[1]}:\\
-	Problem komiwojażera – problem optymalizacyjny mający na celu znalezienie minimalnego cyklu Hamiltona w grafie pełnym ważonym. Jest to problem z kategorii NP- trudnych.\\
-	Słowne przedstawienie problemu:\\ 
+	Problem komiwojażera (Travelling Salesman Problem- TSP) – jeden z najstarszych problemów optymalizacyjnych mający na celu znalezienie minimalnego cyklu Hamiltona w n-wierzchołkowej sieci pełnej, tzn. takiej, w której każda para wierzchołków jest połączona łukiem. Jest to problem z kategorii NP- trudnych. Słowne przedstawienie problemu:\\ 
 	Komiwojażer ma za zadanie odwiedzić n lokalizacji. Znane są odległości (czasem także cena i czas podróży ) między każdą parą lokalizacji.
 	Celem komiwojażera jest odwiedzenie wszystkich punktów (tylko raz) w jak najkrótszym czasie/ najkrótszą drogą/ najmniejszym kosztem, zaczynając w ustalonym punkcie i do niego wracając.\\
-	Matematyczne ujęcie problemu zgodnie ze wzorami Dantziga-Fulkersona-Johnsona \hyperlink{dfj}{[1]}:\\
+	Matematyczne ujęcie problemu zgodnie z \hyperlink{tsp_math_model}{[1]}:\\
+	Rozpatrujemy graf nieskierowany G = (V,E), gdzie: \\
+	V - zbiór wierzchołków grafu,\\
+	E - zbiór krawędzi grafu\\
 	Oznaczmy punkty do odwiedzenia numerami od 1 do n. Dalej oznaczmy:
 	\[ x_{ij} = 
 	\begin{cases}
@@ -178,24 +171,21 @@ outer=2cm,
 	0 &\mbox{w przeciwnym wypadku}
 	\end{cases}
 	\]
-	Przyjmijmy $c_{ij}$ jako odległość z punktu $i$ do $j$. Wtedy problem komiwojażera może być zapisany jako problem programowania liniowego:\\
+	Przyjmijmy $d_{ij}$ jako odległość (koszt) z punktu $i$ do $j$. Wtedy problem komiwojażera może być zapisany jako problem programowania liniowego:\\
 	  
 	  \begin{equation}
-		  {min \sum\limits_{i=1}^{n} \sum\limits_{j \neq i, j=1}^{n}}c_{ij}x_{ij}:
+		  {min \sum\limits_{(i,j) \in E} d_{ij}x_{ij}}
 	  \end{equation}
+	  
+	  Przy ograniczeniach:\\
+	  
 	  \begin{equation}
-	  	0 \le x_{ij} \le 1 \quad i,j = 1,...,n 
+	  	  {\sum\limits_{j \in V} x_{ij} = 2}, \quad \forall i \in V
 	  \end{equation}
+	  
 	  \begin{equation}
-	  {min \sum\limits_{i=1, i \neq j}^{n}}x_{ij} = 1 \quad j = 1,...,n 
-	  \end{equation}
-	  \begin{equation}
-	  {min \sum\limits_{j=1, j \neq i}^{n}}x_{ij} = 1 \quad i = 1,...,n 
-	  \end{equation}
-	  \begin{equation}
-	  {\sum\limits_{i \in Q} \sum\limits_{j \in Q}}x_{ij} \le |Q|-1 \quad \forall Q \not\subseteq \{1,...,n\}, |Q| \ge 2
-	  \end{equation}
-	  Ostatnie ograniczenie formuły Dantziga-Fulkersona-Johnsona zapewnia, że nie ma żadnych podtras między początkowymi wierzchołkami, więc zwrócone rozwiązanie to pojedyncza trasa, a nie połączenie kilku mniejszych tras. 
+	  	  {\sum\limits_{i,j \in S, i \neq j} x_{ij} \leq |S| - 1, \quad \forall S \subset V, S \neq \emptyset }
+	  \end{equation}\\
 	
 	
 	
@@ -203,110 +193,110 @@ outer=2cm,
 	1) symetryczny- gdzie dla dowolnych punktów X i Y odległość z X do Y jest taka sama jak z Y do X\\
 	2) asymetryczny- gdzie powyższe odległości mogą się różnić\\
 	
-	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji.\newpage
-	
-	\begin{large}
-		\textbf{1.3.2. VRP i CVRP}
-	\end{large}
-	
-	\begin{large}
-		\begin{center}
-			\textbf{Problem marszrutyzacji}
-		\end{center}
-	\end{large}
+	Na podstawie notatek z wykładu nt. badań operacyjnych:\\
+	Metody rozwiązywania problemu komiwojażera:\\
+	1) metody dokładne:
 
-	Na podstawie \hyperlink{vrp}{[1]} oraz \hyperlink{cvrp}{[2]}:\\
-	Problem marszrutyzacji polega na wyznaczeniu optymalnych tras dla określonej liczby środków transportu. Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Flota pojazdów ma za zadanie odwiedzenie zadanych punktów, z uwzględnieniem przyjętych ograniczeń. W ramach optymalizacji bierze się pod uwagę sumaryczny koszt pokonanych tras. \\
-	
-	\begin{large}
-		\begin{center}
-			\textbf{VRP}
-		\end{center}
-	\end{large} 
+	\hspace{5mm}- programowanie dynamiczne
 
-	Matematyczne sformułowanie podstawowego problemu komiwojażera (VRP):\\
+	\hspace{5mm}- algorytm podziału i ograniczeń\\
+	2) metody przybliżone:
+	
+	\hspace{5mm}- algorytm najbliższego sąsiada
+	
+	\hspace{5mm}- algorytm wstawiania
+	
+	\hspace{5mm}- algorytm MTS (minimalne drzewo rozpinające)
+	
+	\hspace{5mm}- algorytm Lin-Kernigan
+	
+	\hspace{5mm}- algorytmy genetyczne\\
+	
+	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji.
+	
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2.3. VRP}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space
+	
+	Na podstawie \hyperlink{vrp_all}{[1]}:\\
+	Problem marszrutyzacji (Vehicle Routing Problem- VRP) polega na wyznaczeniu optymalnych tras dla określonej liczby środków transportu. Jest on rozszerzeniem problemu komiwojażera czy problemu chińskiego listonosza. Jest to problem z kategorii NP- trudnych. Flota pojazdów ma za zadanie odwiedzenie zadanych punktów, z uwzględnieniem przyjętych ograniczeń. W ramach optymalizacji bierze się pod uwagę sumaryczny koszt pokonanych tras. \\
+	Matematyczne sformułowanie podstawowego problemu marszrutyzacji (VRP):\\
 	Rozpatrywany jest graf nieskierowany $G=(V,E)$, gdzie:\\
 	- V oznacza zbiór wierzchołków\\ 
 	- E oznacza zbiór krawędzi, do których przypisane są koszty przejazdu (również inne parametry, np. czas)
 	\\
 	Zadanie polega na zminimalizowaniu funkcji celu:
 	\begin{equation}
-	{minC=\sum\limits_{r \in R}\sum\limits_{f \in V}\sum\limits_{g \in V}}c_{fg}x_{fgr}
+	{min =\sum\limits_{i \neq j} d_{ij} x_{ij} }
 	\end{equation}
+	
+	Przy ograniczeniach:\\
+	
+	\begin{equation}
+	{\sum\limits_{j} x_{ij} = 1, \quad \forall i \in V }
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{i} x_{ij} = 1, \quad \forall j \in V }
+	\end{equation}
+	
+	\begin{equation}
+	{\sum\limits_{i} x_{ij} \geq |S| - v(S), \quad \{S : S \subseteq V \setminus\{1\}, |S| \geq 2  \} }
+	\end{equation}
+	
+	\begin{equation}
+	{x_{ij} \in \{0,1\}, \quad \forall\{i,j\} \in E ; \quad i \neq j }
+	\end{equation}
+	
 	gdzie:\\
-	r- pojazd należący do zbioru pojazdów R\\
-	f,g- wierzchołki grafu między, którymi porusza się pojazd\\
-	$c_{fg}$- koszt przejazdu między wierzchołkadmi f i g\\
-	$x_{fgr}$- zmienna przyjmująca wartości 0 lub 1 w zależności od tego czy pojazd wykonuje przejazd między wierzchołkami f i g (1 oznacza, że wykonuje) \\
-	
-	\hspace{-6mm}Ograniczenia:\\
-	- istnieje tylko jedna baza początkowa i końcowa, które odwiedza dokładnie jeden pojazd r. Dla wierzchołków pośrednich ilość pojazdów wjeżdżających równa się ilości pojazdów wyjeżdżających\\
-	
-	\begin{equation}
-	{\forall r \in R\sum\limits_{g \in E}}x_{0,g,r}=1 \quad \text{dla bazy początkowej}
-	\end{equation}
-	\begin{equation}
-	{\forall r \in R\sum\limits_{f \in E}}x_{f,n+1,r}=1 \quad \text{dla bazy końcowej}
-	\end{equation}
-	\begin{equation}
-	{\forall r \in R \wedge \forall f \in V\sum\limits_{f \in E}x_{f,z,r} -  \sum\limits_{g \in E}}x_{z,g,r} = 0\quad \text{dla wierzchołków pośrednich}
-	\end{equation}
-	
-	\hspace{-6mm}- dla każdego punktu jest przypisany dokładnie jeden pojazd, który zabiera z niego cały ładunek, ładunki nie są rozdzielane\\
-	
-	\begin{equation}
-	{\forall f \in V \sum\limits_{g \in E} \sum\limits_{r \in R}}x_{fgr} = 1 
-	\end{equation}
-	
-	\begin{equation}
-	{\forall f \in E \wedge \forall g \in E \wedge \forall r \in R}x_{fgr} \in \{0,1\} 
-	\end{equation}
+	i, j - wierzchołki grafu między, którymi porusza się pojazd\\
+	$d_{ij}$ - koszt przejazdu między wierzchołkadmi i oraz j\\
+	$x_{ij}$ - zmienna przyjmująca wartości 0 lub 1 w zależności od tego czy pojazd wykonuje przejazd między wierzchołkami i oraz j (1 oznacza, że wykonuje) \\
+	$v(S)$ - odpowiednia dolna granica liczby pojazdów wymaganych do odwiedzenia wszystkich wierzchołków S dla rozwiązania optymalnego\\
 
-	\begin{large}
-		\begin{center}
-			\textbf{CVRP}
-		\end{center}
-	\end{large} 
+	\begin{flushleft}
+		\begin{large}
+			\textbf{2.4. CVRP}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space 
 	
-	CVRP (Capacity Vehicle Routing Problem) jest rozwinięciem problemu komiwojażera poprzez dodanie określonej pojemności pojazdów. Matematyczny model dla CVRP na podstawie \hyperlink{cvrp}{[7]} oraz \hyperlink{cvrp2}{[8]}:\\
+	Na podstawie \hyperlink{cvrp-irnich}{[7]}:\\
+	CVRP (Capacity Vehicle Routing Problem), czyli problem marszrutyzacji z uwzględnieniem ograniczeń ładowności pojazdów jest rozwinięciem problemu komiwojażera poprzez dodanie ograniczenia w postaci określonej pojemności pojazdów. Jest najbardziej studiowanym wariantem z rodziny problemów VRP. Matematyczny model dla CVRP:\\
 	
 	Funkcja celu:\\
 	\begin{equation}
-	{min=\sum\limits_{i = 1}^{n}\sum\limits_{j = 1}^{n}}C_{ij}y_{ij} + KC_{DO}
+	{min= c^Tx}
 	\end{equation}
 	
 	Przy ograniczeniach:\\
 	\begin{equation}
-	{\sum\limits_{i \in V}y_{ij} = 1, \forall i \in V \setminus \{O,D\}, i \neq j}
+	{x(\delta(i)) = 2 \quad \forall i \in N }
 	\end{equation}
 	
 	\begin{equation}
-	{\sum\limits_{j \in V}y_{ij} = 1, \forall i \in V \setminus \{O,D\}, i \neq j}
+	{x(\delta(0)) = 2|K| }
 	\end{equation}
 	
 	\begin{equation}
-	{\sum\limits_{j \in V}y_{Oj} = K}
+	{x(\delta(S)) \geq 2r(S) }
 	\end{equation}
 	
 	\begin{equation}
-	{\sum\limits_{i \in V}y_{iD} = K}
+	{x(\delta(S)) \geq 2r(S) \quad \forall S \subseteq N, S \neq \emptyset}
 	\end{equation}
 	
 	\begin{equation}
-	{\sum\limits_{k \in K}x_{OD}^{k} = K}
+	{x_e \in \{0,1,2\} \quad \forall e \in \delta(0)}
 	\end{equation}
 	
 	\begin{equation}
-	{\sum\limits_{k \in K}x_{Dj}^{k} = 0, \forall j \in V, j \neq 0 }
+	{x_e \in \{0,1\} \quad \forall e \in E \setminus \delta(0)}
 	\end{equation}
 	
-	\begin{equation}
-	{U_{i} - U_{j} + qy_{ij} \leq q - d_{j}  \quad  \forall i, j \in V \setminus \{O,D\}, i \neq j \quad gdzie \quad d_{i} + d_{j} \leq q}
-	\end{equation}
-	
-	\begin{equation}
-	{d_{i} \leq u_{i} \leq q \quad \forall i \in V \setminus \{O,D\} }
-	\end{equation}
 	
 	Dla zmiennych decyzyjnych:\\
 	
@@ -318,22 +308,14 @@ outer=2cm,
 	{ x_{ij}^{k} \in \{0,1\} \quad \forall i,j \in V, \forall k \in K }
 	\end{equation}
 	
-	gdzie:\\
-	i - miejsce odjazdu lub węzeł\\
-	j - węzeł przyjazdu\\
-	k - użyty pojazd, $k \in K$\\
-	|K| - ilość dostępnych pojazdów\\
-	V - zbiór węzłów\\
-	U - pojemność pojazdu\\
-	$d_{i}$ - wymaganie klienta w węźle i\\
-	$C_{ij}$ - koszt transportu lub dystans z węzła i do j\\
-	$x_{ij}^{k} = 1$ jeśli pojazd jest przypisany do przejścia\\ danej krawędzi z $i$ do $j$ ( w przeciwnym wypadku $x_{ij}^{k} = 1$)\\
-	$y_{ij} = 1$ jeśli trasa z węzła $i$ do $j$ istnieje (w przeciwnym wypadku $y_{ij} = 0$)\\
-	q - pojemność pojazdu k\\
-	O - węzeł startowy pojazdów (baza) $O_B$\\
-	D - węzeł końcowy (magazyn) $D_A$\\
-	$C_{DO}$ - koszt transportu lub dystans z $D_A$ do $O_B$\\
-	$KC_{DO}$ - koszt powrotu lub odległość wszystkich pojazdów z $D_A$ do $O_B$\\
+	gdzie:\\	
+	$c^T$ - macierz kosztów przejazdów\\
+	S - arbitralny pozbiór zbioru wszystkich wierzchołków V\\
+	N - zbiór n miejsc do odwiedzenia, N = {1,2,...,n}\\
+	K - flota pojazdów, K = {1,2,...,|K|}\\
+	r(S) - minimalna liczba tras pojazdu potrzebnych do obsługi S\\
+	$\delta(S) = \{\{i,j\} \in E : i \in S, j \notin S \}$ - zbiór krawędzi z dokładnie jednym (dwoma) punktem końcowym w S\\
+	 
 	
 	\begin{large}
 		\begin{center}
@@ -373,9 +355,12 @@ outer=2cm,
 	\newpage
 	
 	
-	\begin{large}
-		\textbf{1.3.3. Algorytmy przybliżone}
-	\end{large}
+	\begin{flushleft}
+		\begin{LARGE}
+			\textbf{3. Algorytmy przybliżone w problemie
+				optymalizacji trasy}
+		\end{LARGE}
+	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
 	\begin{large}
@@ -387,23 +372,26 @@ outer=2cm,
 	Na podstawie \hyperlink{algorithm}{[3]}:\\
 	\textbf{Algorytm} to dowolna poprawnie zdefiniowana procedura obliczeniowa, która przyjmuje pewną wartość lub zestaw wartości jako dane wejściowe i generuje pewną wartość lub zestaw wartości jak wynik. Algorytm jest zatem sekwencją kroków obliczeniowych, które przekształcają dane wejściowe do wyjściowych.\\
 	Można także postrzegać algorytm jako narzędzie do rozwiązywania odpowiednio określonego problemu obliczeniowego. Opis problemu określa ogólnie pożądaną
-	relację między danymi wejściowymi, a wyjściowymi. Algorytm opisuje określoną procedurę obliczeniową do osiągnięcia tej relacji wejścia / wyjścia. Klasycznym przykładem, do którego wykorzystuje się algorytmy jest procedura sortowania, np. liczb. Sposób przedstawienia algoytmu może być różny- algorytm może być zapisany jako: schemat blokowy, pseudokod, lista kroków, itp. Przykładowy diagram blokowy ilustrujący algorytm sortowania bąbelkowego:\\
+	relację między danymi wejściowymi, a wyjściowymi. Algorytm opisuje określoną procedurę obliczeniową do osiągnięcia tej relacji wejścia / wyjścia. Klasycznym przykładem, do którego wykorzystuje się algorytmy jest procedura sortowania, np. liczb. Sposób przedstawienia algoytmu może być różny- algorytm może być zapisany jako: schemat blokowy, pseudokod, lista kroków, itp. Przykładowy diagram blokowy ilustrujący algorytm sortowania bąbelkowego:
 	\begin{figure}[h]
-		\includegraphics[scale=0.75]{bubble_sort}
+		\includegraphics[scale=0.735]{bubble_sort}
 		\centering
 		\\
 		{Rysunek1. Diagram blokowy algorytmu sortującego\hyperlink{bubble}{[1]}} 
 	\end{figure}
 	
+	\newpage
+	
 	Algorytm jest poprawny, jeśli dla każdej instancji wejściowej kończy się z poprawnym wyjściem. Mówimy, że poprawny algorytm rozwiązuje dany problem obliczeniowy. Niepoprawny algorytm może w ogóle nie zostać zatrzymany dla niektórych instancji wejściowych lub	może się zakończyć z niepoprawną odpowiedzią. Czasami jednak niepoprawne algorytmy
 	mogą okazać się przydatne, jeśli możemy kontrolować ich poziom błędów. W dalszej części zostanie opisany pewien rodzaj algorytmów nazywany algorytmami przybliżonymi.\\
 	
 	
-	\begin{large}
-		\begin{center}
-			\textbf{Algorytmy przybliżone}
-		\end{center}
-	\end{large}
+	\begin{flushleft}
+		\begin{large}
+			\textbf{3.1. Algorytmy przybliżone}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space 
 
 	Na podstawie \hyperlink{algorithm}{[3]}:\\
 	Wiele problemów o znaczeniu praktycznym jest NP-zupełnych, czyli takich, dla których nie ma rozwiązań w czasie wielomianowym. Często są one jednak zbyt ważne, aby je porzucić. Z tego powodu szuka się rozwiązań przybliżonych. Istnieją co najmniej trzy sposoby obejścia NP- zupełności:\\
@@ -438,12 +426,12 @@ outer=2cm,
 	
 	\newpage
 	
-	
-	\begin{large}
-		\begin{center}
-			\textbf{Algorytmy ewolucyjne}
-		\end{center}
-	\end{large}
+	\begin{flushleft}
+		\begin{large}
+			\textbf{3.2. Algorytmy ewolucyjne}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space 
 
 	Na podstawie \hyperlink{evolutionaryalgorithm}{[3]}:\\
 	\textbf{Algorytm ewolucyjny} jest to algorytm metaheurytycznej optymalizacji, należący do grupy algorytmów przybliżonych, który bazuje na populacji osobników, tworzących rozwiązania. Algorytm ewolucyjny jest inspirowany mechanizmami ewolucji biologicznej, jak np. mutacja, reprodukcja, selekcja. Potencjalne rozwiązania w tym algorytmie pełnią rolę jednostek w populacji. Odpowiednio dobrana funkcja celu określa jakość tych rozwiązań. Ewolucja populacji następuje po wielokrotnym zastosowaniu powyżej wspomnianych operatorów ewolucji. Algorytmy ewolucyjne często dobrze sprawdzają się do znajdowania przybliżonych rozwiązań dla problemów różnych typów, ponieważ nie czynią na początku żadnych założeń dotyczących skłaniania się ku potencjalnym "dobrym" rozwiązaniom. Są więc bardzo uniwersalne. Algorytmami podobnymi do ewolucyjnych są algorytmy rojowe, np. algorytm mrówkowy czy algorytm pszczeli.\\
@@ -465,10 +453,12 @@ outer=2cm,
 	
 	\newpage
 	
-	\begin{large}
-		\textbf{1.3.4. Algorytm genetyczny}
-	\end{large}
-	\vspace{5mm} %5mm vertical space
+	\begin{flushleft}
+		\begin{large}
+			\textbf{3.3. Algorytm genetyczny}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space 
 	
 	Na podstawie \hyperlink{ag}{[3]}:\\
 	Termin algorytm genetyczny po raz pierwszy wprowadził John Holland, bazując na koncepcji Darwina- teorii ewolucji. Jest to metaheurystyka (metoda poszukiwania rozwiązań, która nie gwarantuje znalezienia optymalnego rozwiązania) bazująca na zjawisku naturalnej selekcji (teorii ewolucji gatunków), a także dziedziczności. Należy do szerszej grupy- algorytmów ewolucyjnych. Algorytm ten polega na znajdowaniu rozwiązania naśladując zjawiska występujące w środowisku naturalnym, takie jak: mutacje, krzyżowania gatunków, a także selekcja. Z założenia w algorytmach genetycznych występuje element losowości, jednak fakt umiejętnego wykorzystania przeszłego doświadczenia w celu stworzenia nowych rozwiązań sprawia, że algorytm ten jest daleki od przypadkowego błądzenia. Taka metoda zyskuje na popularności ze względu na ograniczenia metod analitycznych.\\
@@ -589,12 +579,12 @@ outer=2cm,
 		\textbf{Obwody elektryczne}
 	\end{center}
 
-	AG są wykorzystywane także do projektowania obwodów elektrycznych. Jest to problem bardzo praktyczny, a inżynierowie do zaprojektowania odpowiedniego obwodu nie koniecznie potrzebują najlepszego możliwego rozwiązania. W takich sytuacjach AG jest bardzo wydajny oraz ze względu na fakt, że AG nie bazuje na wcześniejszych rozwiązaniach i schematach może okazać się źródłem nowych pomysłów w budowaniu obwodu elektrycznego. 
+	AG są wykorzystywane także do projektowania obwodów elektrycznych. Jest to problem bardzo praktyczny, a inżynierowie do zaprojektowania odpowiedniego obwodu nie koniecznie potrzebują najlepszego możliwego rozwiązania- w takich sytuacjach AG jest bardzo wydajn. Ze względu na fakt, że AG nie bazuje na wcześniejszych rozwiązaniach i schematach może okazać się źródłem nowych pomysłów w budowaniu obwodu elektrycznego. 
 	
 	\newpage
 	\begin{flushleft}
 		\begin{large}
-			\textbf{2. Opis projektu}
+			\textbf{4. Opis projektu}
 		\end{large}
 	\end{flushleft}
 	
@@ -602,7 +592,7 @@ outer=2cm,
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{2.1. Użyte technologie}
+			\textbf{4.1. Użyte technologie}
 		\end{large}
 	\end{flushleft}
 	\vspace{10mm} %5mm vertical space
@@ -613,7 +603,7 @@ outer=2cm,
 	 - posiada bardzo dużą liczbę darmowych i powszechnie dostępnych bibliotek, zapewniających rozszerzoną funkcjonalność\\ 
 	 
 	 Na podstawie \hyperlink{osm}{[5]}:\\
-	 \textbf{OSM (OpenStreetMap)}- jest to darmowa, edytowalna mapa całego świata, tworzona przez wolontariuszy, wydawana na licencji open-content. Licencja OpenStreetMap pozwala na bezpłatny dostęp do obrazów i podstawowych danych map. Projekt ma na celu promowanie nowych zastosowań tych danych. W pracy OSM zostało wykorzystane do zwizualizowania przebiegów tras i pokazania ich na rzeczywistej mapie. Przykład obrazu uzyskanego dzięki OSM \hyperlink{osm_example}{[6]}: \\
+	 \textbf{OSM (OpenStreetMap)}- jest to darmowa, edytowalna mapa całego świata, tworzona przez wolontariuszy, wydawana na licencji open-content. Licencja OpenStreetMap pozwala na bezpłatny dostęp do obrazów i podstawowych danych map. Projekt ma na celu promowanie nowych zastosowań tych danych. W pracy OSM zostało wykorzystane do zwizualizowania przebiegów tras i pokazania ich na rzeczywistej mapie. Przykład obrazu uzyskanego dzięki OSM \hyperlink{osm_photo}{[6]}: \\
 	 
  	\begin{figure}[h]
  	\includegraphics[scale=0.23]{osm_example}
@@ -622,7 +612,23 @@ outer=2cm,
  	{Rysunek2. Przykładowy screen z osm}
 	\end{figure}
 	 
-	 Biblioteki: \\
+	 Poniżej przedstawiono krótki opis najważniejszych bibliotek użytych do stworzenia programu w języku python: \\
+	 
+	 
+	 Na podstawie \hyperlink{pyqt}{[5]}:\\
+	 PyQt- jest to zbiór bibliotek pythona stworzonych przez Riverbank Computing. Służą do tworzenia interfejsów graficznych aplikacji w ramach międzyplatformowego frameworka Qt, który jest open-sourcowy. Możliwa w użyciu na wielu systemach opercyjnych i platformach. W programie została użyta w celu zrobienia GUI oraz wyświetlania w nim mapy.\\
+	 
+	 
+	 Na podstawie \hyperlink{folium}{[5]}:\\
+	 Folium- w znacznym stopniu opiera się na bibliotece leaflet.js służącej do mapowania, tworzenia interaktywnych map w javascript. Folium pozwala na przetwarzanie danych geograficznych oraz ich wizualizację w pythonie. W aplikacji za pomocą tej biblioteki tworzone są mapy w formacie html, które następnie są wyświetlane w gui stworzonym przy pomocy PyQt.\\
+	 
+	 Na podstawie \hyperlink{geopy}{[5]}:\\
+	 Geopy- biblioteka pozwalająca na łatwą lokalizację współrzędnych geograficznych na podstawie adresów oraz obliczania odległości na globie między dwoma zbiorami współrzednych (długość i szerokość geograficzna). W pracy użyta w celu obliczenia odległości na globie dla zestawu danych.\\
+	 
+	 
+	 
+	 
+	 
 	 
 	 
 	 
@@ -633,35 +639,22 @@ outer=2cm,
 	\newpage
 	\renewcommand\refname{Źródła}
 	\begin{thebibliography}{}
-		\bibitem{vrp} 
-		{\hypertarget{optymalizacja}{\textcolor{blue}{
-		https://sjp.pwn.pl/slowniki/optymalizacja.html}}}
-	
-		\bibitem{problemy} 
-		{\hypertarget{problemy}{\textcolor{blue}{
-		http://www.cs.put.poznan.pl/arybarczyk/TeoriaZlozonosc.pdf}}}
-	
-		\bibitem{zlozonosc} 
-		{\hypertarget{zlozonosc}{\textcolor{blue}{
-		http://home.agh.edu.pl/~horzyk/lectures/pi/ahdydpiwykl8.html}}}
 
 		\bibitem{komiwojazer} 
 		{\hypertarget{komiwojazer}{\textcolor{blue}{
 		Sysło M.M., Deo N., Kowalik J.S., Algorytmy optymalizacji dyskretnej, wyd. drugie, Warszawa: Wydawnictwo Naukowe PWN, 1995, ISBN 83-01-11818-0}}}
 	
-		\bibitem{dfj}
-		{\hypertarget{dfj}{\textcolor{blue}{
-		Dantzig, George B. (1963), Linear Programming and Extensions, Princeton, NJ: PrincetonUP, pp. 545–7, ISBN 0-691-08000-3, sixth printing, 1974.}}}
+		\bibitem{tsp_math_model}
+		{\hypertarget{tsp_math_model}{\textcolor{blue}{
+		http://examples.gurobi.com/traveling-salesman-problem/}}}
 	
-		\bibitem{vrp}
-		{\hypertarget{vrp}{\textcolor{blue}{
-		 Dantzig, George Bernard; Ramser, John Hubert (October 1959). "The Truck Dispatching Problem", https://andresjaquep.files.wordpress.com/2008/10/2627477-clasico-dantzig.pdf}}}
+	 
+	 	\bibitem{vrp_all}
+	 	{\hypertarget{vrp_all}{\textcolor{blue}{
+		https://www.researchgate.net/publication/313005083\_Vehicle\_routing\_problem\_Models\_and\_solutions}}}
 		
-		\bibitem{cvrp} 
-		{\hypertarget{cvrp}{\textcolor{blue}{T. Ralphs, J. Hartman and M. Galati. "Capacitated Vehicle Routing and Some Related Problems". Some CVRP Slides. Rutgers University. 2001}}}
-		
-		\bibitem{cvrp2} 
-		{\hypertarget{cvrp2}{\textcolor{blue}{https://www.researchgate.net/publication/326129926\_Capacitated\_vehicle\_routing\_problem\\\_model\_for\_carriers}}}
+		\bibitem{cvrp-irnich} 
+		{\hypertarget{cvrp-irnich}{\textcolor{blue}{https://www.researchgate.net/publication/284529903\_Chapter\_1\_The\_Family\_of\_Vehicle\_\\Routing\_Problems}}}
 		
 		\bibitem{metaheurystyka} 
 		{\hypertarget{metaheurystyka}{\textcolor{blue}{Bianchi, Leonora; Marco Dorigo; Luca Maria Gambardella; Walter J. Gutjahr (2009). "A survey on metaheuristics for stochastic combinatorial optimization"}}}
@@ -699,10 +692,30 @@ outer=2cm,
 	 	\bibitem{osm} 
 	 	{\hypertarget{osm}{\textcolor{blue}{
 		https://wiki.openstreetmap.org/wiki/About\_OpenStreetMap}}}
-		\bibitem{osm} 
-		{\hypertarget{osm_example}{\textcolor{blue}{
+		
+		
+		\bibitem{osm_photo} 
+		{\hypertarget{osm_photo}{\textcolor{blue}{
 		https://wiki.openstreetmap.org/wiki/File:Screenshot\_2019-10-23\_CicloMapa.png
 		}}}
+	
+		\bibitem{pyqt} 
+		{\hypertarget{pyqt}{\textcolor{blue}{
+		https://python101.readthedocs.io/pl/latest/pyqt/
+		}}}
+	
+	
+		\bibitem{folium} 
+		{\hypertarget{folium}{\textcolor{blue}{
+		https://python-visualization.github.io/folium/
+		}}}
+	
+		\bibitem{geopy} 
+		{\hypertarget{geopy}{\textcolor{blue}{
+		https://geopy.readthedocs.io/en/stable/
+		}}}
+	
+		
 
 	\end{thebibliography}
 	
