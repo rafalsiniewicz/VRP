@@ -52,24 +52,22 @@ outer=2cm,
 		\begin{large}\textbf{Spis treści}\end{large}
 		\vspace{5mm}\\
 		\textbf{1. Wstęp }\\
-			\hspace{5mm}1.1. Ogólne omówienie pracy\\
-			\hspace{5mm}1.2. Cel pracy\\
-			\hspace{5mm}1.3. Zakres pracy\\
+			\hspace{5mm}1.1. Cel pracy\\
+			\hspace{5mm}1.2. Zakres pracy\\
 		\textbf{2. Zagadnienie poszukiwania najlepszej trasy }\\
-			\hspace{5mm}2.1. Problem znalezienia trasy optymalnej\\
-			\hspace{5mm}2.2. TSP\\
-			\hspace{5mm}2.3. VRP\\
-			\hspace{5mm}2.4. CVRP\\
+			\hspace{5mm}2.1. TSP\\
+			\hspace{5mm}2.2. VRP\\
+			\hspace{5mm}2.3. CVRP\\
 		\textbf{3. Algorytmy przybliżone w problemie
 			optymalizacji trasy }\\
-			\hspace{5mm}3.1. Algorytmy przybliżone\\
-			\hspace{5mm}3.2. Algorytmy ewolucyjne\\
+			\hspace{5mm}3.1. Algorytm mrówkowy\\
+			\hspace{5mm}3.2. Algorytm pszczeli\\
 			\hspace{5mm}3.3. Algorytm genetyczny\\
 		\textbf{4. Opis projektu}\\
 			\hspace{5mm}4.1. Użyte technologie\\
 			\hspace{5mm}4.2. Opis aplikacji\\
 			\hspace{5mm}4.3. Implementacja AG\\
-		\textbf{5. Działanie aplikacji}\\
+		\textbf{5. Aplikacja}\\
 		\textbf{6. Testy}\\
 			\hspace{5mm}6.1. Sprawdzenie poprawnosci wczytywanych danych\\
 			\hspace{5mm}6.2. Dzialanie dla roznych danych i sprawdzenie optymalnosci otrzymanego rozwiazania\\
@@ -86,11 +84,6 @@ outer=2cm,
 		\end{LARGE}
 	\end{flushleft}
 	
-	\begin{flushleft}
-		\begin{large}
-			\textbf{1.1. Ogólne omówienie pracy}
-		\end{large}
-	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
 	Transport od zawsze pełnił bardzo ważną rolę w życiu społeczenśtw. W przeciągu wieków zmieniały się środki transpotu, jego metody, a także szybkość przemieszaczania ludzi oraz towarów. Za każdym jednak razem wyzwanie stanowiło jak najoptymalniejsze przeprowadzenie procesu transportu.
@@ -110,7 +103,7 @@ outer=2cm,
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{1.2. Cel pracy}
+			\textbf{1.1. Cel pracy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
@@ -120,7 +113,7 @@ outer=2cm,
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{1.3. Zakres pracy}
+			\textbf{1.2. Zakres pracy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
@@ -137,12 +130,6 @@ outer=2cm,
 		\end{LARGE}
 	\end{flushleft}
 
-
-	\begin{flushleft}
-		\begin{large}
-			\textbf{2.1. Problem znalezienia trasy optymalnej}
-		\end{large}
-	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
 	
 	Optymalizacja trasy polega na znajdowaniu przy pomocy metod matematycznych najlepszego (biorąc pod uwage wybrane kryteria) rozwiązania z uwzględnieniem ściśle określonych ograniczeń. Problem poszukiwania optymalnej trasy należy do ważnych zagadnień z zakresu planowania transportu. Historycznie wywodzi się od problemu komiwojażera (Travelling Salesman Problem). Optymalizacja trasy może skupiać się na różnych czynnikach, takich jak: długość trasy, koszty, czas podróży, itp. Zazwyczaj jednak optymalizacja ma na celu znalezienie najkrótszej trasy.\\
@@ -150,7 +137,7 @@ outer=2cm,
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{2.2. TSP}
+			\textbf{2.1. TSP}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
@@ -212,11 +199,11 @@ outer=2cm,
 	
 	\hspace{5mm}- algorytmy genetyczne\\
 	
-	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji.
+	Trudność w rozwiązaniu problemu komiwojażera polega na dużej ilości danych- wszystkich możliwych kombinacji dla n punktów jest $(n-1)!/2$. Zatem już przy 15 punktach otrzymujemy ponad $43\cdot10^9$ (czterdzieści trzy miliardy) możliwych tras do rozpatrzenia. Rozwinięciem problemu komiwojażera jest problem marszrutyzacji opisany poniżej.
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{2.3. VRP}
+			\textbf{2.2. VRP}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space
@@ -259,7 +246,7 @@ outer=2cm,
 
 	\begin{flushleft}
 		\begin{large}
-			\textbf{2.4. CVRP}
+			\textbf{2.3. CVRP}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space 
@@ -361,36 +348,7 @@ outer=2cm,
 				optymalizacji trasy}
 		\end{LARGE}
 	\end{flushleft}
-	\vspace{5mm} %5mm vertical space
 	
-	\begin{large}
-		\begin{center}
-			\textbf{Algorytm}
-		\end{center}
-	\end{large}
-
-	Na podstawie \hyperlink{algorithm}{[3]}:\\
-	\textbf{Algorytm} to dowolna poprawnie zdefiniowana procedura obliczeniowa, która przyjmuje pewną wartość lub zestaw wartości jako dane wejściowe i generuje pewną wartość lub zestaw wartości jak wynik. Algorytm jest zatem sekwencją kroków obliczeniowych, które przekształcają dane wejściowe do wyjściowych.\\
-	Można także postrzegać algorytm jako narzędzie do rozwiązywania odpowiednio określonego problemu obliczeniowego. Opis problemu określa ogólnie pożądaną
-	relację między danymi wejściowymi, a wyjściowymi. Algorytm opisuje określoną procedurę obliczeniową do osiągnięcia tej relacji wejścia / wyjścia. Klasycznym przykładem, do którego wykorzystuje się algorytmy jest procedura sortowania, np. liczb. Sposób przedstawienia algoytmu może być różny- algorytm może być zapisany jako: schemat blokowy, pseudokod, lista kroków, itp. Przykładowy diagram blokowy ilustrujący algorytm sortowania bąbelkowego:
-	\begin{figure}[h]
-		\includegraphics[scale=0.735]{bubble_sort}
-		\centering
-		\\
-		{Rysunek1. Diagram blokowy algorytmu sortującego\hyperlink{bubble}{[1]}} 
-	\end{figure}
-	
-	\newpage
-	
-	Algorytm jest poprawny, jeśli dla każdej instancji wejściowej kończy się z poprawnym wyjściem. Mówimy, że poprawny algorytm rozwiązuje dany problem obliczeniowy. Niepoprawny algorytm może w ogóle nie zostać zatrzymany dla niektórych instancji wejściowych lub	może się zakończyć z niepoprawną odpowiedzią. Czasami jednak niepoprawne algorytmy
-	mogą okazać się przydatne, jeśli możemy kontrolować ich poziom błędów. W dalszej części zostanie opisany pewien rodzaj algorytmów nazywany algorytmami przybliżonymi.\\
-	
-	
-	\begin{flushleft}
-		\begin{large}
-			\textbf{3.1. Algorytmy przybliżone}
-		\end{large}
-	\end{flushleft}
 	\vspace{5mm} %5mm vertical space 
 
 	Na podstawie \hyperlink{algorithm}{[3]}:\\
@@ -401,55 +359,57 @@ outer=2cm,
 	- można zaproponować metody znalezienia prawie optymalnych rozwiązań w czasie wielomianowym (w najgorszym lub oczekiwanym przypadku)\\
 	
 	W praktyce przybliżona optymalizacja jest na ogół wystarczająca. Algorytm, który zwraca prawie optymalne
-	rozwiązanie nazywamy \textbf{algorytmem przybliżonym (aproksymacyjnym)}.\\
-	
-	\begin{large}
-		\begin{center}
-			\textbf{Współczynniki wydajności dla algorytmów przybliżonych}
-		\end{center}
-	\end{large}
-	
-	Na podstawie \hyperlink{algorithm}{[3]}:\\
-	
-	Mówimy, że algorytm dla pewnego problemu ma wskaźnik aproksymacji $\rho(n)$, jeśli dla dowolnego wejścia wielkości n koszt C rozwiązania wytworzonego przez algorytm zawiera się
-	w ramach $\rho(n)$ współczynnika kosztu C* optymalnego rozwiązania:
-	
-	\begin{equation}
-		max \left(\frac{C}{C^*}, \frac{C^*}{C}\right) \leq \rho(n) 
-	\end{equation}
-	
-	Jeśli algorytm osiąga wskaźnik aproksymacji $\rho(n)$, nazywamy go algorytmem $\rho(n)$- aproksymacyjnym. Definicja wskaźnika aproksymacji algorytmu $\rho(n)$- aproksymacyjnego stosuje się zarówno dla problemów, w których jest minimalizcja jak i maxymalizacja funkcji celu.\\
-	Dla maxymalizacji jest: $0 \le C \leq C^*$ oraz wskaźnik $C^*/C$ daje czynnik mówiący o ile koszt rozwiązania optymalnego jest większy od kosztu rozwiązania przybliżonego.\\
-	Podobnie dla minimalizacji jest: $0 \le C^* \leq C$ oraz wskaźnik $C/C^*$ daje czynnik mówiący o ile koszt rozwiązania optymalnego jest większy od kosztu rozwiązania przybliżonego.\\
-	Ponieważ zakładamy, że wszystkie rozwiązania mają dodatni koszt, współczynniki te są dobrze zdefiniowane. Wskaźnik aproksymacji algorytmu przybliżonego jest nie mniejszy niż 1, skoro $C/C^* \leq 1$ implikuje $C/C^* \geq 1$.\\
-	Stąd algorytm przybliżony o wskaźniku aproksymacji wynoszącym 1 daje optymalne rozwiązanie, natomiast algorytm przybliżony o dużym wskaźniku aproksymacji może zwrócić rozwiązanie, które jest o wiele gorsze od optymalnego.\\
+	rozwiązanie nazywamy \textbf{algorytmem przybliżonym (aproksymacyjnym)}. Istnieje wiele rodzajów algorytmów zaliczanych do grupy algorytmów przybliżonych, m.in. algorytm genetyczny, algorytm symulowanego wyżarzania, algorytm mrówkowy, algortym pszczeli i inne. Niektóre z nich zostaną omówione w dalszej części tego rozdziału.\\
 	
 	\newpage
 	
 	\begin{flushleft}
 		\begin{large}
-			\textbf{3.2. Algorytmy ewolucyjne}
+			\textbf{3.1. Algorytm mrówkowy}
 		\end{large}
 	\end{flushleft}
 	\vspace{5mm} %5mm vertical space 
 
-	Na podstawie \hyperlink{evolutionaryalgorithm}{[3]}:\\
-	\textbf{Algorytm ewolucyjny} jest to algorytm metaheurytycznej optymalizacji, należący do grupy algorytmów przybliżonych, który bazuje na populacji osobników, tworzących rozwiązania. Algorytm ewolucyjny jest inspirowany mechanizmami ewolucji biologicznej, jak np. mutacja, reprodukcja, selekcja. Potencjalne rozwiązania w tym algorytmie pełnią rolę jednostek w populacji. Odpowiednio dobrana funkcja celu określa jakość tych rozwiązań. Ewolucja populacji następuje po wielokrotnym zastosowaniu powyżej wspomnianych operatorów ewolucji. Algorytmy ewolucyjne często dobrze sprawdzają się do znajdowania przybliżonych rozwiązań dla problemów różnych typów, ponieważ nie czynią na początku żadnych założeń dotyczących skłaniania się ku potencjalnym "dobrym" rozwiązaniom. Są więc bardzo uniwersalne. Algorytmami podobnymi do ewolucyjnych są algorytmy rojowe, np. algorytm mrówkowy czy algorytm pszczeli.\\
+	Na podstawie \hyperlink{ant}{[3]}:\\
+	\textbf{Algorytm mrówkowy (Ant colony optimization)}- metoda optymalizacji opierająca się na zdolnościach mrówek do znajdowania najkrótszej ścieżki z gniazda do źródła pokarmu. Naśladuje ona przeskakiwanie mrówek z jednego miejsca do innego, tak długo aż dotrą do celu. Każdej ścieżce, którą mogą się poruszać mrówki przypisuje się współczynnik określający intensywność wytworzonych feromonów. Koncepcja ta opiera się na fakcie wydzielania przez mrówki związków organicznych nazywanych feromonami podczas podążania ścieżką. Intensywność tego czynnika jest wskaźnikiem przydatności danej ścieżki do budowania coraz lepszych rozwiązań. W opisie matematycznym zbiór tras przedstawia się za pomocą węzłów i krawędzi w grafie. Wtedy mrówka w każdym węźle podejmuje decyzje do którego węzła się uda się następnie. Początkowo stała ilośc feromonu przydzialana jest wszystkim łukom. Im więcej mrówek wybierze daną ścieżkę tym większy jest jest współczynnik feromonów.\\
+	Algorytm mrówkowy przedstawiony za pomocą schematu blokowego:\\
+	\begin{figure}[h]
+		\includegraphics[scale=0.8]{ant}
+		\centering
+		\\
+		{Schemat1. Algorytm mrówkowy \hyperlink{ant}{[3]} } 
+	\end{figure}
 	
-	Algorytm ewolucyjny w krokach:\\
-	1. Generacja losowa początkowej populacji osobników (pierwsza generacja).\\
-	2. Obliczenie funkcji celu dla każdego osobnika w populacji.\\
-	3. Powtarzanie następujących kroków aż do osiągniecią odpowiedniej wartości funkcji celu lub maksymalnej ilości iteracji:
+	\newpage
 	
-	\hspace{5mm}- wybierz najlepiej dopasowane osobniki do reprodukcji (rodzice)
+	\begin{flushleft}
+		\begin{large}
+			\textbf{3.2. Algorytm pszczeli}
+		\end{large}
+	\end{flushleft}
+	\vspace{5mm} %5mm vertical space 
 	
-	\hspace{5mm}- rozmnażanie osobników poprzez krzyżowanie oraz mutacje, w celu wydania nowego 
+	Na podstawie \hyperlink{bees}{[3]}:\\
+	\textbf{Algorytm pszczeli (bees algorithm)}- algorytm przybliżony inspirowany zachowaniem roju pszczół. W naturze pszczoły miodne zbierają nektar ze stosunkowo dużego obszaru wokół ula (ok. 10km). Zaobserwowano, że kolonie pszczół wysyłają odpowiednio pszczoły do zebrania nektaru z kwiatów z uwzględnieniem ilości nektaru znajdującego się na płatkach roślin. Pszczoły komunikują się ze sobą w ulu za pośrednictwem "tańca", informując inne osobniki o kierunku, odległości, a także ocenie jakości źródeł pokarmu. Proces ten odbywa się w ten sposób: ul wysyła zwiadowców, których zadaniem jest zlokalizowanie kwiatów z jak największą ilością nektaru. Zwiadowcy po powrocie informują inne pszczoły gdzie jest pokarm oraz jaka jest jakość jego źródła. Niewielka ilość zwiadowców nadal szuka nowych roślin, a pszczoły wracające z nektarem na bieżąco informują o jakości źródła. Algorytm wykorzystuje tego typu zachowanie w celu zlokalizowania i eksploracji dobrych rozwiązań. "Zwiadowcy" są wysyłani aby losowo sprawdzać miejsca potencjalnych rozwiązań i znajdować te najlepsze. Następnie w tych miejscach dokonuje się przeszukiwań lokalnych, a jednocześnie wciąż zwiadowcy są wysyłani w poszukiwaniu innych dobrych rozwiązań.    
+	Algorytm pszczeli jest terminem ściśle związanym z inteligencją obliczeniową oraz metaheurytyką.\\
 	
-	\hspace{6mm} potomstwa (rozwiązań)
+	Pseudokod algorytmu pszczelego na podstawie \hyperlink{bees_code}{[3]}:\\
+	1 \hspace{5mm} $i = 0$\\
+	2 \hspace{5mm} $Generacja \; populacji \; pocz\text{ą}tkowej$\\
+	3 \hspace{5mm} $Obliczenie \; funkcji \; celu \; dla \; pocz\text{ą}tkowej \; populacji$\\
+	4 \hspace{5mm} $Sortowanie \; pocz\text{ą}tkowej \; populacji \; na \; podstawie \; warto\text{ś}ci \; obliczonych \; w \; funkcji \; celu$\\
+	5 \hspace{5mm} $While \; i \leq MaxIter$:\\ 
+	6 \hspace{20mm} $ i = i + 1$\\
+	7 \hspace{20mm} $ Wybierz \; kwiaty \; z \; najlepszymi \; rozwi\text{ą}zaniami $\\
+	8 \hspace{20mm} $ Wybierz \; pszczoły \; zwiadowcze \; do \; przeszukiwania \; najlepszych \; miejsc$\\
+	9 \hspace{20mm} $ Oblicz \; warto\text{ś}c \; f. celu \; dla \; ka\text{ż}dego \; kwiata$\\
+	10 \hspace{18mm} $ Sortuj \; wyniki \; na \; podstawie \; warto\text{ś}ci f. celu$\\
+	11 \hspace{18mm} $ Wyznacz \; reszt\text{ę} \; pszcz\text{ół} \; do \; globalnego \; przeszukiwania \; kwiat\text{ó}w$\\
+	12 \hspace{18mm} $ Oblicz \; f. celu \; dla \; pozosta\text{ł}ych \; kwiat\text{ó}w$\\
+	13 \hspace{18mm} $ Sortuj \; wszystkie \; wyniki \; na \; podstawie \; warto\text{ś}ci \; f. celu$\\
+	14 \hspace{18mm} $ Wykonuj \; algorytm \; dop\text{ó}ki \; warunek \; jest \; spe\text{ł}niony $\\
+	15 \hspace{5mm} $Koniec$\\
 	
-	\hspace{5mm}- oblicz funkcję celu dla nowo powstałych osobników
-	
-	\hspace{5mm}- pozostawienie jedynie najlepszych osobników (rozwiązań)\\
 	
 	\newpage
 	
@@ -662,15 +622,19 @@ outer=2cm,
 		\bibitem{algorithm} 
 		{\hypertarget{algorithm}{\textcolor{blue}{
 		Thomas H. Cormen; Charles E. Leiserson; Ronald L. Rivest; Clifford Stein (2009). Introduction To Algorithms (3rd ed.). MIT Press. ISBN 978-0-262-03384-8.}}}
+		
+		
+		\bibitem{ant} 
+		{\hypertarget{ant}{\textcolor{blue}{
+		https://www.sciencedirect.com/topics/engineering/ant-colony-optimization}}}
 	
-		\bibitem{bubble} 
-		{\hypertarget{bubble}{\textcolor{blue}{
-		https://javarevisited.blogspot.com/2014/08/bubble-sort-algorithm-in-java-with.html}}}
+		\bibitem{bees} 
+		{\hypertarget{bees}{\textcolor{blue}{
+		http://www.cleveralgorithms.com/nature-inspired/swarm/bees\_algorithm.html}}}
 	
-		\bibitem{evolutionaryalgorithm} 
-		{\hypertarget{evolutionaryalgorithm}{\textcolor{blue}{
-		 Vikhar, P. A. "Evolutionary algorithms: A critical review and its future prospects". Proceedings of the 2016 International Conference on Global Trends in Signal Processing, Information Computing and Communication (ICGTSPICC). Jalgaon, 2016, pp. 261-265. ISBN 978-1-5090-0467-6.}}}
-	
+		\bibitem{bees_code} 
+		{\hypertarget{bees_code}{\textcolor{blue}{
+		https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4553508/}}}
 
 		
 		\bibitem{ag} 

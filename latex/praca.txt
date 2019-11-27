@@ -1,0 +1,2 @@
+w gui:
+parametry AG, tj. prawdopodobienstwo krzyzowania, prawdopodobienstwo mutacji, liczba osobnikow, ile najlepszych zostaje
