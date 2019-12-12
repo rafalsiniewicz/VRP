@@ -158,8 +158,9 @@ class Program:
 
 
 			print(j, " ", self.population.BestIndividual().GetLength(), "	", self.population.BestIndividual().GetCapacity())
+			#print(j, " ", best.GetLength(), "	", best.GetCapacity())
 			if self.population.BestIndividual().GetLength() < best.GetLength():
-				best = self.population.BestIndividual()
+				best = copy(self.population.BestIndividual())
 
 			#self.population.LeavenBest(number_of_individuals_to_stay)
 			

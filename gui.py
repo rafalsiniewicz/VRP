@@ -33,6 +33,7 @@ def choose_color():
 class App(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.best = None
         self.program = Program()
         self.program.ImportData("test1.json")
         # 1. option:
@@ -113,6 +114,12 @@ class App(QWidget):
         #button.setToolTip('This is an example button')
         button.move(x_pos, y_pos)
         button.clicked.connect(self.on_click_plot)
+
+    def plot_map(self, name, x_pos, y_pos):
+        button = QPushButton(name, self)
+        #button.setToolTip('This is an example button')
+        button.move(x_pos, y_pos)
+        button.clicked.connect(self.create_map)
         
 
     def text_boxes(self):
@@ -210,7 +217,8 @@ class App(QWidget):
     def initUI(self):
         self.resize(700, 480)
         self.button('Calculate track', 370, 400)
-        self.plot_2d('Draw', 250, 400)
+        self.plot_2d('Draw 2d', 250, 400)
+        self.plot_map('Draw map', 250, 350)
         self.createLayout_Container()
         self.layout_All = QVBoxLayout(self)
         self.layout_All.addWidget(self.scrollarea)
@@ -324,15 +332,16 @@ class App(QWidget):
 
     def on_click_plot(self):
 
-        color = ["r", "g", "b", "k", "y"]
+        if self.best != None:
+            color = ["r", "g", "b", "k", "y"]
 
-        for r in range(0, self.best.GetSize()):
-            points = self.best.Getn(r).GetValues()
-            for i in range(0, len(points)-1):
-                plt.plot([points[i][0], points[i+1][0]], [points[i][1], points[i+1][1]], color[r] + "o-")
+            for r in range(0, self.best.GetSize()):
+                points = self.best.Getn(r).GetValues()
+                for i in range(0, len(points)-1):
+                    plt.plot([points[i][0], points[i+1][0]], [points[i][1], points[i+1][1]], color[r] + "o-")
 
-        plt.grid()
-        plt.show()
+            plt.grid()
+            plt.show()
 
         
 
@@ -361,50 +370,50 @@ class App(QWidget):
         for i in range(0, len(nodes)-1):
             routes.append(shortest_path(G, nodes[i], nodes[i+1], weight='length'))
         '''
+        if self.best != None:
+
+            m = folium.Map(location=[CRACOW_CENTRE["CRACOW"][0], CRACOW_CENTRE["CRACOW"][1]],
+                zoom_start=15, control_scale=True)
 
 
-        m = folium.Map(location=[CRACOW_CENTRE["CRACOW"][0], CRACOW_CENTRE["CRACOW"][1]],
-            zoom_start=15, control_scale=True)
-
-
-        for place, position in self.program.GetPopulation().BestIndividual().Merge().items():
-            if place == list(self.END.keys())[0]:
-                folium.Marker(
-                location=[position[0], position[1]],
-                popup= list(self.START.keys())[0] + "/" + place,
-                icon=folium.Icon(color='red', icon='ok-sign'),
-            ).add_to(m)
-            else:
-                folium.Marker(
+            for place, position in self.program.GetPopulation().BestIndividual().Merge().items():
+                if place == list(self.END.keys())[0]:
+                    folium.Marker(
                     location=[position[0], position[1]],
-                    popup=place,
-                    icon=folium.Icon(color='green', icon='ok-sign'),
+                    popup= list(self.START.keys())[0] + "/" + place,
+                    icon=folium.Icon(color='red', icon='ok-sign'),
                 ).add_to(m)
-        for i in range(0,self.program.GetPopulation().BestIndividual().GetSize()):
-            points = []
-            for place, position in self.program.GetPopulation().BestIndividual().Getn(i).Get().items():
-                points.append(position[0:2])
-            folium.PolyLine(
-                points,
-                color=choose_color()
-                ).add_to(m)
-        #print(type(routes[0]))
-        #print(routes)
-        '''for i in range(0,len(routes)):
-            plot_route_folium(G, routes[i], route_width=3, route_map= m, route_color=choose_color(), tiles='Stamen Terrain', popup_attribute='name')
-        '''
-        outfp = "map.html"
-        m.save(outfp)
-        #webview.create_window('Hello world', 'map.html')
+                else:
+                    folium.Marker(
+                        location=[position[0], position[1]],
+                        popup=place,
+                        icon=folium.Icon(color='green', icon='ok-sign'),
+                    ).add_to(m)
+            for i in range(0,self.program.GetPopulation().BestIndividual().GetSize()):
+                points = []
+                for place, position in self.program.GetPopulation().BestIndividual().Getn(i).Get().items():
+                    points.append(position[0:2])
+                folium.PolyLine(
+                    points,
+                    color=choose_color()
+                    ).add_to(m)
+            #print(type(routes[0]))
+            #print(routes)
+            '''for i in range(0,len(routes)):
+                plot_route_folium(G, routes[i], route_width=3, route_map= m, route_color=choose_color(), tiles='Stamen Terrain', popup_attribute='name')
+            '''
+            outfp = "map.html"
+            m.save(outfp)
+            #webview.create_window('Hello world', 'map.html')
 
-        #app = QApplication(sys.argv)
-        #label = QLabel("Hello World!")
-        self.browser = QWebEngineView()
-        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "map.html"))
-        local_url = QUrl.fromLocalFile(file_path)
-        self.browser.load(local_url)
+            #app = QApplication(sys.argv)
+            #label = QLabel("Hello World!")
+            self.browser = QWebEngineView()
+            file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "map.html"))
+            local_url = QUrl.fromLocalFile(file_path)
+            self.browser.load(local_url)
 
-        self.browser.show()
+            self.browser.show()
 
 
 
