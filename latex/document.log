@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.5)  27 NOV 2019 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.5)  11 DEC 2019 21:58
 entering extended mode
 **./document.tex
 (document.tex
@@ -327,6 +327,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
+("D:\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count119
+\float@exts=\toks30
+\float@box=\box29
+\@float@everytoks=\toks31
+\@floatcapt=\box30
+)
 
 LaTeX Warning: Unused global option(s):
     [justified].
@@ -334,37 +342,37 @@ LaTeX Warning: Unused global option(s):
 (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 25.
  ("D:\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 ("D:\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
+\scratchcounter=\count120
 \scratchdimen=\dimen136
-\scratchbox=\box29
-\nofMPsegments=\count120
-\nofMParguments=\count121
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count122
+\scratchbox=\box31
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count123
 \MPscratchDim=\dimen137
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks33
 ) ("D:\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -378,7 +386,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\AtBeginShipoutBox=\box30
+\AtBeginShipoutBox=\box32
 
 ("D:\MiKTeX 2.9\tex/latex/graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
@@ -388,7 +396,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 23.
+Package hyperref Info: Link coloring ON on input line 25.
 
 ("D:\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -396,11 +404,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("D:\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count125
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
  (document.out)
 (document.out)
 \@outlinefile=\write3
@@ -441,7 +449,7 @@ LaTeX Info: Redefining \nameref on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 23.
+LaTeX Info: Redefining \microtypecontext on input line 25.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -454,53 +462,55 @@ Package microtype Info: No adjustment of character kerning.
 ("D:\MiKTeX 2.9\tex/latex/microtype\mt-ptm.cfg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-<./images/AGH.png, id=3, 264.23718pt x 319.94531pt>
-File: ./images/AGH.png Graphic file (type png)
-<use ./images/AGH.png>
-Package pdftex.def Info: ./images/AGH.png  used on input line 26.
+<./images/AGH_old.png, id=3, 264.23718pt x 319.94531pt>
+File: ./images/AGH_old.png Graphic file (type png)
+<use ./images/AGH_old.png>
+Package pdftex.def Info: ./images/AGH_old.png  used on input line 29.
 (pdftex.def)             Requested size: 211.39001pt x 255.95659pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <16> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 35.
  [1
 
 
 Non-PDF special ignored!
 <special> header=tree-dvips91.pro
 {C:/Users/RafaÅ‚/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/A
-GH.png>]
+GH_old.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 58.
  [2]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
 [4]
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 15
-5.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 16
+0.
  ("D:\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -508,176 +518,209 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 15
-5.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 16
+0.
 
 ("D:\MiKTeX 2.9\tex/latex/psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 15
-5.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 16
+0.
 
 ("D:\MiKTeX 2.9\tex/latex/psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 15
-5.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 16
+0.
 
 ("D:\MiKTeX 2.9\tex/latex/psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 155.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 160.
 
 
 ("D:\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 155.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 179--182
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 241--246
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--305
+Underfull \hbox (badness 10000) in paragraph at lines 240--242
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 284--291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--339
-
- []
-
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 354--360
-
+Overfull \hbox (6.13107pt too wide) in paragraph at lines 293--302
+\T1/ptm/m/n/12 (-20) - Pe-ri-odic Ve-hi-cle Rout-ing Prob-lem (PVRP)- wymaga od
+wiedzenia zbioru klien-tów w planowanych
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--314
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 329--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 
  []
 
 [10]
-<./images/ant.png, id=87, 560.0925pt x 503.8825pt>
+<./images/ant.png, id=92, 560.0925pt x 503.8825pt>
 File: ./images/ant.png Graphic file (type png)
 <use ./images/ant.png>
-Package pdftex.def Info: ./images/ant.png  used on input line 377.
+Package pdftex.def Info: ./images/ant.png  used on input line 352.
 (pdftex.def)             Requested size: 448.0746pt x 403.10655pt.
- [11 <./images/ant.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 392--395
 
- []
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 404.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--412
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 423--425
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-<./images/cross.jpg, id=104, 451.6875pt x 107.65219pt>
-File: ./images/cross.jpg Graphic file (type jpg)
-<use ./images/cross.jpg>
-Package pdftex.def Info: ./images/cross.jpg  used on input line 447.
-(pdftex.def)             Requested size: 451.68639pt x 107.65192pt.
-[13 <./images/cross.jpg>]
-<./images/mutation.png, id=113, 189.70876pt x 107.65219pt>
-File: ./images/mutation.png Graphic file (type png)
-<use ./images/mutation.png>
-Package pdftex.def Info: ./images/mutation.png  used on input line 456.
-(pdftex.def)             Requested size: 189.70828pt x 107.65192pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 473--478
-
- []
-
-<./images/ag.png, id=115, 377.41pt x 469.755pt>
-File: ./images/ag.png Graphic file (type png)
-<use ./images/ag.png>
-Package pdftex.def Info: ./images/ag.png  used on input line 495.
-(pdftex.def)             Requested size: 301.9284pt x 375.80452pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./images/mutation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 509--513
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 367--370
+
+ []
+
+[12 <./images/ant.png>]
+
+LaTeX Warning: Command \l invalid in math mode on input line 379.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--387
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 398--400
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
-[15 <./images/ag.png>] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 560--564
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+<./images/roulette.jpg, id=121, 451.6875pt x 209.28188pt>
+File: ./images/roulette.jpg Graphic file (type jpg)
+<use ./images/roulette.jpg>
+Package pdftex.def Info: ./images/roulette.jpg  used on input line 431.
+(pdftex.def)             Requested size: 451.68639pt x 209.28134pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+<./images/tournament.jpg, id=123, 451.6875pt x 264.23718pt>
+File: ./images/tournament.jpg Graphic file (type jpg)
+<use ./images/tournament.jpg>
+Package pdftex.def Info: ./images/tournament.jpg  used on input line 443.
+(pdftex.def)             Requested size: 451.68639pt x 264.23653pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--459
+
+ []
+
+[15 <./images/roulette.jpg>] [16 <./images/tournament.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
+
+ []
+
+<./images/ag.png, id=134, 271.0125pt x 345.54094pt>
+File: ./images/ag.png Graphic file (type png)
+<use ./images/ag.png>
+Package pdftex.def Info: ./images/ag.png  used on input line 480.
+(pdftex.def)             Requested size: 216.81029pt x 276.43312pt.
+<./images/solution.png, id=135, 453.19313pt x 221.32687pt>
+File: ./images/solution.png Graphic file (type png)
+<use ./images/solution.png>
+Package pdftex.def Info: ./images/solution.png  used on input line 503.
+(pdftex.def)             Requested size: 362.555pt x 177.06172pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./images/ag.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 526--530
+
+ []
+
+[18 <./images/solution.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 559--564
 
  []
 
@@ -686,11 +729,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--567
 
  []
 
-<./images/osm_example.png, id=134, 1927.2pt x 953.5625pt>
+<./images/osm_example.png, id=153, 1927.2pt x 953.5625pt>
 File: ./images/osm_example.png Graphic file (type png)
 <use ./images/osm_example.png>
 Package pdftex.def Info: ./images/osm_example.png  used on input line 569.
 (pdftex.def)             Requested size: 443.24669pt x 219.31476pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
@@ -701,49 +747,124 @@ Underfull \hbox (badness 10000) in paragraph at lines 578--580
 
  []
 
-[17 <./images/osm_example.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 582--584
 
  []
 
+[20]
+<./images/folium.png, id=165, 552.56438pt x 332.74312pt>
+File: ./images/folium.png Graphic file (type png)
+<use ./images/folium.png>
+Package pdftex.def Info: ./images/folium.png  used on input line 586.
+(pdftex.def)             Requested size: 442.0521pt x 266.19484pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--587
+Underfull \hbox (badness 10000) in paragraph at lines 592--594
 
  []
 
-[18]
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--598
+
+ []
+
+[21 <./images/osm_example.png> <./images/folium.png>] [22]
+<./images/gui.png, id=180, 528.47438pt x 385.44pt>
+File: ./images/gui.png Graphic file (type png)
+<use ./images/gui.png>
+Package pdftex.def Info: ./images/gui.png  used on input line 620.
+(pdftex.def)             Requested size: 475.62254pt x 346.89279pt.
+
+Overfull \hbox (20.37843pt too wide) in paragraph at lines 620--622
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--636
+
+ []
+
+[23 <./images/gui.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 640.
+
+ ("D:\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 640.
+
+Overfull \hbox (1.49255pt too wide) in paragraph at lines 642--643
+[] []\T1/ptm/m/n/12 (-20) W dol-nej cz¦±ci GUI zna-j-duje si¦ przy-cisk "Cal-cu
+-late track", który po wci±ni¦-ciu uruchamia
+ []
+
+[24]
+<./images/map.png, id=189, 603.75563pt x 409.53pt>
+File: ./images/map.png Graphic file (type png)
+<use ./images/map.png>
+Package pdftex.def Info: ./images/map.png  used on input line 657.
+(pdftex.def)             Requested size: 483.00516pt x 327.62444pt.
+
+Overfull \hbox (27.76105pt too wide) in paragraph at lines 657--659
+ [][] 
+ []
+
+[25 <./images/map.png>]
+<./images/miejsce.png, id=195, 603.75563pt x 409.53pt>
+File: ./images/miejsce.png Graphic file (type png)
+<use ./images/miejsce.png>
+Package pdftex.def Info: ./images/miejsce.png  used on input line 668.
+(pdftex.def)             Requested size: 483.00516pt x 327.62444pt.
+
+Overfull \hbox (27.76105pt too wide) in paragraph at lines 668--670
+ [][] 
+ []
+
+[26 <./images/miejsce.png>] [27]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 601.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 699.
 
-Overfull \hbox (51.7565pt too wide) in paragraph at lines 614--615
+Overfull \hbox (3.39993pt too wide) in paragraph at lines 712--713
 [] [][]\T1/ptm/m/n/12 (-20) https://www.researchgate.net/publication/313005083_
-Vehicle_routing_problem_Models_and_solutions[] 
+Vehicle_routing_problem_Models_and 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 650--651
+Underfull \hbox (badness 10000) in paragraph at lines 758--759
 [] [][]\T1/ptm/m/n/12 (+20) https://towardsdatascience.com/introduction-to-gene
 tic-algorithms-including-example-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 689.
-[19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 689.
+
+Overfull \hbox (7.88562pt too wide) in paragraph at lines 762--763
+[] [][]\T1/ptm/m/n/12 (-20) https://www.tutorialspoint.com/genetic_algorithms/g
+enetic_algorithms_parent_selection.htm[] 
+ []
+
+[28]
+Overfull \hbox (16.73997pt too wide) in paragraph at lines 802--803
+[] [][]\T1/ptm/m/n/12 (-20) http://neo.lcc.uma.es/vrp/vrp-instances/capacitated
+-vrp-instances/http://neo.lcc.uma.es/vrp/vrp-
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 811.
+[29]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 811.
  (document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 689.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 689.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 811.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 811.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 689.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 811.
  ) 
 Here is how much of TeX's memory you used:
- 8272 strings out of 492895
- 122395 string characters out of 3139973
- 254855 words of memory out of 3000000
- 11869 multiletter control sequences out of 15000+200000
- 48304 words of font info for 153 fonts, out of 3000000 for 9000
+ 8412 strings out of 492895
+ 124375 string characters out of 3139973
+ 256401 words of memory out of 3000000
+ 11971 multiletter control sequences out of 15000+200000
+ 58321 words of font info for 160 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 31i,8n,38p,1346b,394s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,8n,38p,1346b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/t
@@ -751,9 +872,9 @@ ype1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.p
 fb><D:/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><D:/MiKTeX 2.9/fonts/type1/ur
 w/times/utmb8a.pfb><D:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/MiKTeX 2
 .9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (19 pages, 1240531 bytes).
+Output written on document.pdf (29 pages, 2367589 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 16415 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 96 named destinations out of 1000 (max. 500000)
+ 18488 words of extra memory for PDF output out of 20736 (max. 10000000)
 
