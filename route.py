@@ -35,35 +35,56 @@ def Haversine(origin, destination):
 def Street_distance(G, place1, place2):
     return shortest_path_length(G, place1, place2, weight='length')
 
-START = {"START":[50.057767, 19.931321]}
-END = {"END":[50.057767, 19.931321]}
+#START = {"START":[50.057767, 19.931321]}
+#END = {"END":[50.057767, 19.931321]}
 
 #G = graph_from_place('Krakow, Poland', network_type='drive')
 	
 class Route:
-	def __init__(self):
-		self.route=OrderedDict()
+	def __init__(self, _capacity = 10):
+		self.route = OrderedDict()
+		self.capacity = _capacity
 	def AddPlace(self,name,values):
-		if name != None:
+		if name != None and self.capacity - values[2] >= 0: 
 			self.route[name]=values
+			self.capacity -= values[2]
+			return True
+		else:
+			return False
 	def Get(self):
 		return self.route
 	def GetSize(self):
 		return len(self.route)
 	def Show(self):
 		print(self.route)
+	def ShowCapacity(self):
+		print(self.capacity)
+	def GetCapacity(self):
+		return self.capacity
+
+	def GetValues(self):
+		return list(self.route.values())
 	def GetLength(self):
-		length = Geodesic_distance([0, 0],[0, 0])
+		#length = Geodesic_distance([0, 0],[0, 0])
+		length = 0
 		#length = Street_distance(G, [0, 0],[0, 0])
 		#print(length)
 		#print(self.route[0])
 		#print(list(self.route.values())[0][0])
 		for i in range(0,len(self.route)-1):
-			#length += Distance(list(self.route.values())[i][0],list(self.route.values())[i][1],list(self.route.values())[i+1][0],list(self.route.values())[i+1][1])
-			length += Geodesic_distance(list(self.route.values())[i], list(self.route.values())[i+1])
+			length += Distance(list(self.route.values())[i][0],list(self.route.values())[i][1],list(self.route.values())[i+1][0],list(self.route.values())[i+1][1])
+			#length += Geodesic_distance(list(self.route.values())[i], list(self.route.values())[i+1])
 			#length += Street_distance(G, get_nearest_node(G, list(self.route.values())[i]), get_nearest_node(G, list(self.route.values())[i+1]))
 			#print(i)
 		return length
+
+	'''def GetStreetLength(self):
+		length = 0 
+		for i in range(0, len(self.route)-1):
+			length += shortest_path_length(G, get_nearest_node(G, list(self.route.values())[i]), get_nearest_node(G,list(self.route.values())[i+1]), weight='length')
+
+		return length'''
+		
 
 	def FindNearest(self,place,value,data):
 		distances = OrderedDict()
@@ -84,3 +105,9 @@ class Route:
 			if i == name:
 				return True
 		return False
+
+	def Check_capacity(self,name,values):
+		if name != None and self.capacity - values[2] >= 0: 
+			return True
+		else:
+			return False

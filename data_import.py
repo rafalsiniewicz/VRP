@@ -23,7 +23,7 @@ class Data:
 		else:
 		 	pass
 	def GetName(self,i):
-		if i < len(self.data):
+		if i < len(self.data) and i >= 0:
 			return list(self.data)[i]
 		else:
 			pass
